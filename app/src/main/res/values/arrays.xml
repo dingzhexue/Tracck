@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="countries">
+        <item name="1">Country</item>
+        <item name="2">Russia</item>
+        <item name="3">Australia</item>
+        <item name="4">China</item>
+        <item name="5">India</item>
+        <item name="6">Spain</item>
+        <item name="7">France</item>
+        <item name="8">Germany</item>
+        <item name="9">Iran</item>
+    </string-array>
+
+    <string-array name="brew_array">
+        <item>Recent Purchases</item>
+        <item>Today</item>
+        <item>Yesterday</item>
+        <item>This Month</item>
+        <item>This Year</item>
+    </string-array>
+
+</resources>

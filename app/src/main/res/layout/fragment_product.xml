@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txt_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:layout_marginTop="30dp"
+            android:text="Fast 4G LTE speed, up to 2.0 GHz octa-core processor,4GB of RAM, and a bright 5.2 full HD (1080p) display ensures videos and games run smoothly and look great. \n
+Enjoy the best of Google Android 7.0 Nougat, including Google Play Store, Google Maps, Gmail and more. \n
+Take brilliant photos with the 12 MP HD camera or snap group shots with a 5 MP wide-angle selfie cam. Add up to 128 GB of additional storage with a microSD card. \n
+The all-day battery includes TurboPower (TM) charging which provides up to 6 hours of use in just 15 minutes. \n
+Unlocked and carrier-friendly, works with all major carrier networks domestically or abroad \n
+The fingerprint sensor instantly unlocks your phone"/>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

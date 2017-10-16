@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".controller.activity.VerifySMSActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="Please enter the 4 digit code that has been sent to you via SMS"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_margin="30dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1"
+        android:layout_below="@+id/textView2">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtSMS1"
+            android:hint="0"
+            android:padding="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtSMS2"
+            android:hint="0"
+            android:padding="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtSMS3"
+            android:hint="0"
+            android:padding="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtSMS4"
+            android:hint="0"
+            android:padding="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:id="@+id/btnVerify"
+        android:textAllCaps="false"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorBlue"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Please enter the correct code"
+        android:id="@+id/txtErrCode"
+        android:layout_above="@+id/btnVerify"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:textColor="#ff0000" />
+
+
+</RelativeLayout>

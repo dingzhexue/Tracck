@@ -1,0 +1,54 @@
+<resources>
+    <!-- Phone Verify Screen -->
+    <string name="verify_phone_number">Please verify your country code\n and phone number</string>
+    <string name="country">Country</string>
+    <string name="submit">Submit</string>
+    <string name="enter_4_digit_code">Please enter the 4 digit\n code that has been sent to\n you via SMS</string>
+    <string name="verify">Verify</string>
+    <string name="enter_the_correct_code">Please enter the correct code</string>
+    <string name="plus">+</string>
+    <string name="login_to_amazon">Login to Amazon</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="otp">OTP</string>
+    <string name="login">Login</string>
+    <string name="otp_confirm">Please check the OTP number from the sms or email and fill it</string>
+
+    <string name="invalid_login_info">Please fill the valid information.</string>
+
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+
+    <!-- Home -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="settings">Settings</string>
+
+    <!-- Draw Menu-->
+    <string name="home">Home</string>
+    <string name="archive">Archive</string>
+    <string name="profile">Profile</string>
+    <string name="signout">Sign out</string>
+
+    <string name="status_code_sent">Code Sent</string>
+    <string name="status_verification_failed">Verification failed</string>
+    <string name="status_verification_succeeded">Verification succeeded</string>
+    <string name="status_sign_in_failed">Sign-in failed</string>
+    <string name="instant_validation">(instant validation)</string>
+
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_archive">Archive</string>
+    <string name="en_route">En route</string>
+
+    <!-- TKChat -->
+    <string name="stylish_text">
+        <u>More Info</u>
+    </string>
+    <string name="button_description">Emoticons Button</string>
+
+    <!-- Error message -->
+    <string name="something_went_wrong">Something went wrong!</string>
+</resources>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:gravity="center_vertical">
+
+                <ScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadeScrollbars="false"
+                    android:layout_weight="0.4"
+                    android:scrollbarFadeDuration="0"
+                    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="0.5">
+                            <TextView
+                                android:id="@+id/txt_invoiceno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@android:color/black"
+                                android:layout_marginTop="2dp"
+                                android:padding="2dp"
+                                android:text="Invoice No:"/>
+                            <TextView
+                                android:id="@+id/txt_price"
+                                android:padding="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textColor="@android:color/black"
+                                android:text="Price:"/>
+                            <TextView
+                                android:id="@+id/txt_card"
+                                android:padding="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textColor="@android:color/black"
+                                android:text="Card:"/>
+                            <TextView
+                                android:id="@+id/txt_date"
+                                android:padding="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textColor="@android:color/black"
+                                android:text="Date:"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="0.5">
+                            <TextView
+                                android:id="@+id/txt_invoiceno_show"
+                                android:layout_width="wrap_content"
+                                android:padding="2dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="867467HJ5"/>
+                            <TextView
+                                android:id="@+id/txt_price_show"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:padding="2dp"
+                                android:text="RS. 12999"/>
+                            <TextView
+                                android:id="@+id/txt_card_show"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:padding="2dp"
+                                android:text="Citibank Debit"/>
+                            <TextView
+                                android:id="@+id/txt_date_show"
+                                android:layout_width="wrap_content"
+                                android:padding="2dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_height="wrap_content"
+                                android:text="12.09.2017"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.4">
+                <TextView
+                    android:id="@+id/txt_warranty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WARRANTY"
+                    android:padding="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/holo_blue_bright"/>
+                <TextView
+                    android:id="@+id/txt_warranty_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="2 years manufacturer warranty for \n Phone and for in the accessories."/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.3">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ProgressBar
+                        android:id="@+id/gauge"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:progress="10"
+                        android:progressDrawable="@drawable/progressbar"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="614 days remaining"
+                            android:textColor="@color/colorItemText"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="60dp"
+                            android:layout_centerVertical="true"
+                            />
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+        </LinearLayout>    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string translatable="false" name="app_name">Tracck</string>
+    <string translatable="false" name="app_short_name">Tracck</string>
+    <string translatable="false" name="about_url">http://avanalyze.com</string>
+</resources>

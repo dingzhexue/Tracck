@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_green">#23D8AD</color>
+    <color name="app_blue">#2AB2F0</color>
+
+    <color name="colorPrimary">@color/app_blue</color>
+    <color name="colorPrimaryDark">#00B2F0</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#23D8AD</color>
+    <color name="colorBackground">#23D8AD</color>
+    <color name="colorBlue">#29b2ef</color>
+    <color name="colorGray">#f2f4f4</color>
+    <color name="colorItemText">#FFFFFF</color>
+
+    <color name="colorButtonBg">@color/colorPrimary</color>
+    <color name="colorNavBg">@color/app_green</color>
+
+    <color name="colorRed1">#E02D2D</color>
+
+    <color name="red20">#fae1df</color>
+    <color name="red100">#d30000</color>
+    <color name="green20">#dff0d8</color>
+    <color name="green100">#52902c</color>
+    <color name="yellow20">#fef8e9</color>
+    <color name="yellow100">#f19f15</color>
+    <color name="white00">#ffffff</color>
+    <color name="black00">#333333</color>
+    <color name="colorYellow">#ffbc5a</color>
+    <color name="colorthickRed">#ff7145</color>
+    <color name="colorGreen">#3bd19f</color>
+    <color name="colorPurple">#9b64cc</color>
+    <color name="colorGreenLight">#c2efdc</color>
+</resources>

@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/emoticons_button"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_weight="0.1"
+        android:contentDescription="@string/button_description"
+        android:src="@mipmap/btn_i" />
+
+    <EditText
+        android:id="@+id/chat_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:hint="chat"
+        android:inputType="textMultiLine|textNoSuggestions" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:src="@mipmap/camera"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:padding="10dp"
+        android:text="SEND"
+        android:textColor="@android:color/white"
+        android:background="@color/colorBlue"/>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "721286203037",
+    "firebase_url": "https://tracck-b65cb.firebaseio.com",
+    "project_id": "tracck-b65cb",
+    "storage_bucket": "tracck-b65cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721286203037:android:bb0424e06c207854",
+        "android_client_info": {
+          "package_name": "flashbox.tracck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721286203037-ksl5u31k7p6nt71d71d2j49k58a2hq8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "flashbox.tracck",
+            "certificate_hash": "9adc9f2cb3c76bed6ad24cab758a5c6293eec9d4"
+          }
+        },
+        {
+          "client_id": "721286203037-317rttldgfdqhf4ht2cllkrs6bhc3ik8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHfsU_hK4i2Yj_BIMarSCajWkwmNBvPJM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721286203037-317rttldgfdqhf4ht2cllkrs6bhc3ik8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Light.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TopMessageDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowAnimationStyle">@style/TopMessageDialogAnimation</item>
+    </style>
+
+    <style name="TopMessageDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/translate_from_top</item>
+        <item name="android:windowExitAnimation">@anim/translate_to_top</item>
+    </style>
+
+    <style name="LeftToRightMessageDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowAnimationStyle">@style/LeftToRightMessageDialogAnimation</item>
+    </style>
+
+    <style name="LeftToRightMessageDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/translate_from_left</item>
+        <item name="android:windowExitAnimation">@anim/translate_to_right</item>
+    </style>
+
+    <style name="AppPrimaryButton" parent="android:Widget.Button">
+        <item name="android:padding">@dimen/common_padding_small2</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+</resources>
