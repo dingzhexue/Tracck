@@ -2,30 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/llDetail">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@color/colorBackground">
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/back"
-            android:id="@+id/btnBack"
-            android:layout_gravity="center_vertical" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:textSize="24dp"
-            android:layout_gravity="center_vertical"
-            android:textColor="#ffffff"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="@dimen/WH_180dp"
         android:orientation="vertical"
         android:weightSum="1">
 
@@ -35,32 +30,33 @@
             android:orientation="horizontal"
             android:weightSum="1">
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/WH_0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4">
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/imgProduct"
-                    android:src="@mipmap/purchaseimg" />
+                    android:src="@mipmap/ic_purchaseimg" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/WH_0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
                 android:orientation="vertical"
                 android:weightSum="1">
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="@dimen/WH_0dp"
                     android:layout_weight="0.3"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="@dimen/margin_20dp">
                     <TextView
+                        android:id="@+id/txtProductName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Moto G(Phone)"
-                        android:textSize="25dp"
+                        android:text="@string/phone_style"
+                        android:textSize="@dimen/bigtxtsize"
                         android:layout_gravity="bottom"
                         android:textColor="@android:color/black"/>
 
@@ -68,50 +64,53 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="@dimen/WH_0dp"
                     android:layout_weight="0.15">
 
                     <TextView
+                        android:id="@+id/txtShopName"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Amazon"
-                        android:textSize="18dp"
+                        android:text="@string/amazon"
+                        android:textSize="@dimen/middlesize"
                         android:textColor="@color/colorBlue"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="@dimen/WH_0dp"
                     android:layout_weight="0.2"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
                     android:weightSum="1">
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/WH_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5">
                         <Button
-                            android:layout_width="90dp"
-                            android:layout_height="25dp"
+                            android:layout_width="@dimen/WH_90dp"
+                            android:layout_height="@dimen/WH_25dp"
                             android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="Shipping"
-                            android:textSize="15dp"
+                            android:text="@string/shipping"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/smallsize"
                             android:textColor="@android:color/white"
                             android:background="@drawable/round"
-                            android:id="@+id/btn_shapping" />
+                            android:id="@+id/btnStatus" />
 
                     </LinearLayout>
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/WH_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginLeft="@dimen/margin_10dp">
                         <Button
-                            android:layout_width="55dp"
-                            android:layout_height="25dp"
-                            android:text="COD"
-                            android:textSize="15dp"
+                            android:layout_width="@dimen/WH_55dp"
+                            android:layout_height="@dimen/WH_25dp"
+                            android:text="@string/cod"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/smallsize"
                             android:background="@drawable/round1"
                             android:textColor="@android:color/white"
                             android:id="@+id/btn_cod" />
@@ -120,27 +119,28 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="@dimen/WH_0dp"
                     android:layout_weight="0.2"
-                    android:layout_marginBottom="3dp">
+                    android:layout_marginBottom="@dimen/margin_3dp">
                     <TextView
+                        android:id="@+id/txtPeriod"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2 days ago"
-                        android:textSize="20dp"
+                        android:text="@string/datetime"
+                        android:textSize="@dimen/bmtxtsize"
                         android:textColor="@android:color/darker_gray"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="@dimen/WH_0dp"
                     android:layout_weight="0.25"
-                    android:layout_marginBottom="15dp">
+                    android:layout_marginBottom="@dimen/margin_15dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="@string/stylish_text"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/bmtxtsize"
                         android:textColor="@color/colorBlue"
                         android:id="@+id/txtMoreInfo" />
 
@@ -153,7 +153,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/WH_1dp"
         android:background="@android:color/darker_gray"/>
 
     <LinearLayout

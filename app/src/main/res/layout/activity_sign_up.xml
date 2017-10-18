@@ -16,14 +16,14 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/logo"
-            android:layout_marginTop="50dp"/>
+            android:background="@mipmap/ic_logo"
+            android:layout_marginTop="@dimen/margin_50dp"/>
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="23dp"
-            android:background="@mipmap/wordmark"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="50dp" />
+            android:layout_width="@dimen/WH_100dp"
+            android:layout_height="@dimen/WH_23dp"
+            android:background="@mipmap/ic_wordmark"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginBottom="@dimen/margin_50dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:id="@+id/textView"
                 android:textColor="@color/colorBlue"/>
         </LinearLayout>
@@ -57,15 +57,15 @@
             android:gravity="center_horizontal|center_vertical">
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/WH_40dp"
                 android:inputType="phone"
                 android:ems="10"
                 android:id="@+id/txtName"
-                android:hint="Name"
-                android:padding="10dp"
+                android:hint="@string/hint_name"
+                android:padding="@dimen/padding_10dp"
                 android:background="@color/colorGray"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginLeft="@dimen/margin_40dp"
+                android:layout_marginRight="@dimen/margin_40dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,15 +75,15 @@
             android:gravity="center_horizontal|center_vertical">
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/WH_40dp"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/txtPassword"
-                android:hint="Password"
-                android:padding="10dp"
+                android:hint="@string/hint_pwd"
+                android:padding="@dimen/padding_10dp"
                 android:background="@color/colorGray"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginLeft="@dimen/margin_40dp"
+                android:layout_marginRight="@dimen/margin_40dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,15 +93,15 @@
             android:gravity="center_horizontal|center_vertical">
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/WH_40dp"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/txtConfirmPassword"
-                android:hint="Re enter Password"
-                android:padding="10dp"
+                android:hint="@string/hint_repwd"
+                android:padding="@dimen/padding_10dp"
                 android:background="@color/colorGray"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginLeft="@dimen/margin_40dp"
+                android:layout_marginRight="@dimen/margin_40dp" />
         </LinearLayout>
 
 
@@ -109,8 +109,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="@dimen/margin_30dp"
+            android:layout_marginRight="@dimen/margin_30dp"
             android:gravity="center_horizontal|center_vertical"
             android:layout_weight="0.3">
 
@@ -124,11 +124,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="I accept the Terms &amp; Conditions."
+                android:textSize="@dimen/mstxtsize"
+                android:text="@string/accept_txt"
                 android:id="@+id/txtTerms"
                 android:textColor="@color/colorBlue"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="@dimen/margin_10dp" />
 
         </LinearLayout>
         <LinearLayout
@@ -139,11 +139,11 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:id="@+id/btnSignUp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="@dimen/margin_40dp"
+                android:layout_marginRight="@dimen/margin_40dp"
+                android:layout_marginTop="@dimen/padding_5dp"
                 android:textAllCaps="false"
                 android:background="@color/colorBlue"
                 android:textColor="@android:color/white"

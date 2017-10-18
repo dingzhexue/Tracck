@@ -14,38 +14,38 @@
         android:weightSum="1">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="@dimen/WH_0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="0.8"
             android:weightSum="1">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/WH_0dp"
                 android:layout_weight="0.5"
                 android:gravity="center_vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Moto G(Phone)"
-                    android:textSize="25dp"
-                    android:layout_marginLeft="20dp"
+                    android:text="@string/cell_item_str_product"
+                    android:textSize="@dimen/margin_25dp"
+                    android:layout_marginLeft="@dimen/margin_20dp"
                     android:textColor="@android:color/black"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/WH_0dp"
                 android:layout_weight="0.5"
                 android:gravity="center_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="Amazon"
-                    android:textSize="18dp"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:text="@string/cell_item_str_shopname"
+                    android:textSize="@dimen/textsize_18sp"
                     android:textColor="@color/colorBlue"/>
 
             </LinearLayout>
@@ -59,7 +59,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+"
+                android:text="@string/simbol_pul"
                 android:textSize="50dp"
                 android:textColor="@android:color/holo_blue_light"/>
         </LinearLayout>

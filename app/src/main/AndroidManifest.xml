@@ -41,7 +41,8 @@
 
         <activity
             android:name=".home.TKHomeActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:label="@string/home">
         </activity>
 
         <activity
@@ -51,8 +52,12 @@
 
         <activity
             android:name=".home.details.TKPurchaseDetailActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:label="@string/home">
         </activity>
+        <activity android:name=".home.TKPreviewActivity"
+            android:theme="@style/AppTheme.NoActionBar.Light.Dialog"
+            android:excludeFromRecents="true" />
 
         <!-- Boot Completed & Wakeup -->
         <receiver

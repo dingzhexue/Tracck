@@ -31,7 +31,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="@dimen/WH_0dp"
                         android:orientation="horizontal"
                         android:weightSum="1">
 
@@ -40,76 +40,76 @@
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
-                            android:layout_marginLeft="30dp"
+                            android:layout_marginLeft="@dimen/margin_30dp"
                             android:layout_weight="0.5">
                             <TextView
                                 android:id="@+id/txt_invoiceno"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@android:color/black"
-                                android:layout_marginTop="2dp"
-                                android:padding="2dp"
-                                android:text="Invoice No:"/>
+                                android:layout_marginTop="@dimen/padding_2dp"
+                                android:padding="@dimen/padding_2dp"
+                                android:text="@string/invoice_no"/>
                             <TextView
                                 android:id="@+id/txt_price"
-                                android:padding="2dp"
+                                android:padding="@dimen/padding_2dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="@dimen/padding_2dp"
                                 android:textColor="@android:color/black"
-                                android:text="Price:"/>
+                                android:text="@string/price"/>
                             <TextView
                                 android:id="@+id/txt_card"
-                                android:padding="2dp"
+                                android:padding="@dimen/padding_2dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="@dimen/padding_2dp"
                                 android:textColor="@android:color/black"
-                                android:text="Card:"/>
+                                android:text="@string/card"/>
                             <TextView
                                 android:id="@+id/txt_date"
-                                android:padding="2dp"
+                                android:padding="@dimen/padding_2dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:textColor="@android:color/black"
-                                android:text="Date:"/>
+                                android:text="@string/date1"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
-                            android:layout_marginLeft="30dp"
+                            android:layout_marginLeft="@dimen/margin_30dp"
                             android:layout_weight="0.5">
                             <TextView
                                 android:id="@+id/txt_invoiceno_show"
                                 android:layout_width="wrap_content"
-                                android:padding="2dp"
+                                android:padding="@dimen/padding_2dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="867467HJ5"/>
+                                android:layout_marginTop="@dimen/padding_2dp"
+                                android:text="@string/str_invoice_no"/>
                             <TextView
                                 android:id="@+id/txt_price_show"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:padding="2dp"
-                                android:text="RS. 12999"/>
+                                android:layout_marginTop="@dimen/padding_2dp"
+                                android:padding="@dimen/padding_2dp"
+                                android:text="@string/str_price"/>
                             <TextView
                                 android:id="@+id/txt_card_show"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:padding="2dp"
-                                android:text="Citibank Debit"/>
+                                android:layout_marginTop="@dimen/padding_2dp"
+                                android:padding="@dimen/padding_2dp"
+                                android:text="@string/str_card"/>
                             <TextView
                                 android:id="@+id/txt_date_show"
                                 android:layout_width="wrap_content"
-                                android:padding="2dp"
-                                android:layout_marginTop="2dp"
+                                android:padding="@dimen/padding_2dp"
+                                android:layout_marginTop="@dimen/padding_2dp"
                                 android:layout_height="wrap_content"
-                                android:text="12.09.2017"/>
+                                android:text="@string/str_date1"/>
                         </LinearLayout>
                     </LinearLayout>
                 </ScrollView>
@@ -117,33 +117,33 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/WH_0dp"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_10dp"
                 android:layout_weight="0.4">
                 <TextView
                     android:id="@+id/txt_warranty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WARRANTY"
-                    android:padding="2dp"
-                    android:layout_marginLeft="10dp"
+                    android:text="@string/warranty"
+                    android:padding="@dimen/padding_2dp"
+                    android:layout_marginLeft="@dimen/margin_10dp"
                     android:textColor="@android:color/holo_blue_bright"/>
                 <TextView
                     android:id="@+id/txt_warranty_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="2 years manufacturer warranty for \n Phone and for in the accessories."/>
+                    android:padding="@dimen/padding_2dp"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:text="@string/srr_warranty"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/WH_0dp"
+                android:layout_marginTop="@dimen/margin_20dp"
                 android:layout_weight="0.3">
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -152,12 +152,11 @@
                         android:id="@+id/gauge"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="@dimen/margin_60dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentRight="true"
                         android:progress="10"
-                        android:progressDrawable="@drawable/progressbar"
-                        />
+                        android:progressDrawable="@drawable/progressbar"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -166,12 +165,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="614 days remaining"
+                            android:text="@string/remaining_days"
                             android:textColor="@color/colorItemText"
-                            android:textSize="20dp"
-                            android:layout_marginLeft="60dp"
-                            android:layout_centerVertical="true"
-                            />
+                            android:textSize="@dimen/margin_20dp"
+                            android:layout_marginLeft="@dimen/margin_60dp"
+                            android:layout_centerVertical="true"/>
                     </LinearLayout>
                 </FrameLayout>
 

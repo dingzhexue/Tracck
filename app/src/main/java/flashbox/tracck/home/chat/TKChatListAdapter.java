@@ -15,7 +15,7 @@ import flashbox.tracck.R;
 import flashbox.tracck.common.Constants;
 import flashbox.tracck.model.TKChat;
 
-public class TKChatListAdapter extends BaseAdapter {
+public class TKChatListAdapter extends BaseAdapter  {
 	private static final int TYPE_MAX_COUNT = Constants.MSG_VIEW_RECOMMEND + 1;
 	private ArrayList<TKChat> comments;
 	private Context mContext;
@@ -54,28 +54,28 @@ public class TKChatListAdapter extends BaseAdapter {
 					break;
 				case Constants.MSG_SCHEDULED_CALL:
 					convertView = inflater.inflate(R.layout.list_row_odd_schedulecall, null);
-					holder.btnMsg = (Button) convertView.findViewById(R.id.btnMsg);
+					holder.btnMsg = (TextView) convertView.findViewById(R.id.btnMsg);
 					holder.txtTime = (TextView) convertView.findViewById(R.id.txtTime);
 					holder.txtDate = (TextView) convertView.findViewById(R.id.txtDate);
 					break;
 				case Constants.MSG_RECEIVED:
 					convertView = inflater.inflate(R.layout.list_row_even, null);
-					holder.btnMsg = (Button) convertView.findViewById(R.id.btnMsg);
+					holder.btnMsg = (TextView) convertView.findViewById(R.id.btnMsg);
 					holder.txtTime = (TextView) convertView.findViewById(R.id.txtTime);
 					break;
 				case Constants.MSG_SENT:
 					convertView = inflater.inflate(R.layout.list_row_odd, null);
-					holder.btnMsg = (Button) convertView.findViewById(R.id.btnMsg);
+					holder.btnMsg = (TextView) convertView.findViewById(R.id.btnMsg);
 					holder.txtTime = (TextView) convertView.findViewById(R.id.txtTime);
 					break;
 				case Constants.MSG_FEEDBACK:
 					convertView = inflater.inflate(R.layout.list_row_odd_feedback, null);
-					holder.btnMsg = (Button) convertView.findViewById(R.id.btnMsg);
+					holder.btnMsg = (TextView) convertView.findViewById(R.id.btnMsg);
 					holder.txtTime = (TextView) convertView.findViewById(R.id.txtTime);
 					break;
 				case Constants.MSG_VIEW_RECOMMEND:
 					convertView = inflater.inflate(R.layout.list_row_view, null);
-					holder.btnMsg = (Button) convertView.findViewById(R.id.btnMsg);
+					holder.btnMsg = (TextView) convertView.findViewById(R.id.btnMsg);
 					holder.txtTime = (TextView) convertView.findViewById(R.id.txtTime);
 					break;
 			}
@@ -125,7 +125,7 @@ public class TKChatListAdapter extends BaseAdapter {
 	public static class ViewHolder {
 		public TextView txtMsg;
 		public TextView txtDate;
-		public Button btnMsg;
+		public TextView btnMsg;
 		public TextView txtTime;
 	}
 }

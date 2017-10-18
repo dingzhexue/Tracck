@@ -7,4 +7,62 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="keyboard_height">230dp</dimen>
+
+    <dimen name="margin_3dp">3dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin_30dp">30dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_35dp">35dp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
+    <dimen name="margin_60dp">60dp</dimen>
+    <dimen name="WH_0dp">0dp</dimen>
+
+    <dimen name="paddding_1dp">1dp</dimen>
+    <dimen name="padding_2dp">2dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
+    <dimen name="padding_25dp">25dp</dimen>
+    <dimen name="padding_30dp">30dp</dimen>
+    <dimen name="padding_35dp">35dp</dimen>
+
+    <dimen name="textsize_13sp">13sp</dimen>
+    <dimen name="textsize_16sp">16sp</dimen>
+    <dimen name="textsize_17sp">17sp</dimen>
+    <dimen name="textsize_18sp">18sp</dimen>
+    <dimen name="mstxtsize">14sp</dimen>
+    <dimen name="txtsize_22sp">22sp</dimen>
+
+    <dimen name="WH_60dp">60dp</dimen>
+    <dimen name="bigtxtsize">25dp</dimen>
+    <dimen name="bmtxtsize">20dp</dimen>
+    <dimen name="middlesize">18dp</dimen>
+    <dimen name="smallsize">15dp</dimen>
+
+    <dimen name="WH_5dp">5dp</dimen>
+    <dimen name="WH_20dp">20dp</dimen>
+    <dimen name="WH_23dp">23dp</dimen>
+    <dimen name="WH_25dp">25dp</dimen>
+    <dimen name="WH_27dp">27dp</dimen>
+    <dimen name="WH_30dp">30dp</dimen>
+    <dimen name="WH_32dp">32dp</dimen>
+    <dimen name="WH_35dp">35dp</dimen>
+    <dimen name="WH_40dp">40dp</dimen>
+    <dimen name="WH_50dp">50dp</dimen>
+    <dimen name="WH_55dp">55dp</dimen>
+    <dimen name="WH_70dp">70dp</dimen>
+    <dimen name="WH_85dp">85dp</dimen>
+    <dimen name="WH_100dp">100dp</dimen>
+    <dimen name="WH_170dp">170dp</dimen>
+    <dimen name="WH_180dp">180dp</dimen>
+    <dimen name="WH_1dp">1dp</dimen>
+    <dimen name="WH_90dp">90dp</dimen>
+    <dimen name="WH_200dp">200dp</dimen>
+
+    <dimen name="spacing">4dp</dimen>
 </resources>

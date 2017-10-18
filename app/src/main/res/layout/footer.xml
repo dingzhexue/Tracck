@@ -8,33 +8,34 @@
 
     <ImageView
         android:id="@+id/emoticons_button"
-        android:layout_width="0dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/WH_0dp"
+        android:layout_height="@dimen/WH_32dp"
         android:layout_weight="0.1"
         android:contentDescription="@string/button_description"
-        android:src="@mipmap/btn_i" />
+        android:src="@mipmap/ic_emoticon" />
 
     <EditText
         android:id="@+id/chat_content"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/WH_0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.6"
-        android:hint="chat"
+        android:hint="@string/chat"
         android:inputType="textMultiLine|textNoSuggestions" />
 
     <ImageView
-        android:layout_width="0dp"
+        android:layout_width="@dimen/WH_0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.1"
-        android:src="@mipmap/camera"/>
+        android:src="@mipmap/ic_camera"/>
 
     <Button
         android:id="@+id/btnSend"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/WH_0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
-        android:padding="10dp"
-        android:text="SEND"
+        android:padding="@dimen/padding_10dp"
+        android:textAllCaps="false"
+        android:text="@string/send"
         android:textColor="@android:color/white"
         android:background="@color/colorBlue"/>
 

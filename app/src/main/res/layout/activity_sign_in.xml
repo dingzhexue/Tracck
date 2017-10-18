@@ -16,14 +16,14 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/logo"
-            android:layout_marginTop="50dp"/>
+            android:background="@mipmap/ic_logo"
+            android:layout_marginTop="@dimen/margin_50dp"/>
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="23dp"
-            android:background="@mipmap/wordmark"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="50dp" />
+            android:layout_width="@dimen/WH_100dp"
+            android:layout_height="@dimen/WH_23dp"
+            android:background="@mipmap/ic_wordmark"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginBottom="@dimen/margin_50dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Sign In"
+            android:text="@string/sign_in"
             android:id="@+id/textView"
                 android:textColor="@color/colorBlue"/>
         </LinearLayout>
@@ -58,15 +58,15 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/WH_50dp"
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/txtMobileNo"
-            android:hint="Mobile No."
-            android:padding="10dp"
+            android:hint="@string/hint_mobile"
+            android:padding="@dimen/padding_10dp"
             android:background="@color/colorGray"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"/>
+            android:layout_marginLeft="@dimen/margin_40dp"
+            android:layout_marginRight="@dimen/margin_40dp"/>
         </LinearLayout>
 
 
@@ -77,15 +77,15 @@
             android:gravity="center_horizontal|center_vertical">
         <EditText
             android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/WH_40dp"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/txtPassword"
-            android:hint="Password"
-            android:padding="10dp"
+            android:hint="@string/hint_pwd"
+            android:padding="@dimen/padding_10dp"
             android:background="@color/colorGray"
-            android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
+            android:layout_marginLeft="@dimen/margin_40dp"
+                android:layout_marginRight="@dimen/margin_40dp"/>
         </LinearLayout>
 
 
@@ -98,11 +98,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Forgot Password"
+            android:text="@string/forgot_pwd"
             android:id="@+id/txtForgotPwd"
             android:textColor="@color/colorBlue"
                 android:layout_weight="0.1"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="@dimen/margin_50dp" />
         </LinearLayout>
 
 
@@ -114,11 +114,11 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign In"
+            android:text="@string/sign_in"
             android:id="@+id/btnSignIn"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="@dimen/margin_40dp"
+            android:layout_marginRight="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/padding_5dp"
                 android:textAllCaps="false"
             android:background="@color/colorBlue"
                 android:textColor="@android:color/white"/>

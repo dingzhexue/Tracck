@@ -16,53 +16,53 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Login to Amazon"
+            android:text="@string/login_to_amazon"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="@dimen/margin_20dp"/>
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/WH_200dp"
+            android:layout_height="@dimen/WH_100dp"
             android:id="@+id/imageView"
             android:layout_gravity="center_horizontal"
-            android:src="@mipmap/logo_amazon" />
+            android:src="@mipmap/ic_logo_amazon" />
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/WH_50dp"
             android:ems="10"
             android:id="@+id/txtUserName"
             android:autoText="false"
-            android:hint="Username"
-            android:padding="10dp"
+            android:hint="@string/hint_username"
+            android:padding="@dimen/padding_10dp"
             android:background="@color/colorGray"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginLeft="@dimen/margin_40dp"
+            android:layout_marginRight="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_20dp" />
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/WH_50dp"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/txtPassword"
-            android:hint="Password"
-            android:padding="10dp"
+            android:hint="@string/hint_pwd"
+            android:padding="@dimen/padding_10dp"
             android:background="@color/colorGray"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginLeft="@dimen/margin_40dp"
+            android:layout_marginRight="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_20dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LogIn"
+            android:text="@string/btn_login"
             android:textAllCaps="false"
             android:id="@+id/btnLogIn"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/margin_40dp"
+            android:layout_marginRight="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_20dp"
             android:background="@color/colorBlue"
             android:textColor="@android:color/white"
             android:layout_gravity="center_horizontal" />

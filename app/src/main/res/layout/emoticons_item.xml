@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/item"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/WH_30dp"
+        android:layout_height="@dimen/WH_30dp"
         android:contentDescription="@string/button_description"
         android:focusable="false" />
 

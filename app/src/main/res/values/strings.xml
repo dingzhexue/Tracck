@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Phone Verify Screen -->
     <string name="verify_phone_number">Please verify your country code\n and phone number</string>
@@ -42,13 +43,104 @@
     <string name="title_activity_home">Home</string>
     <string name="title_activity_archive">Archive</string>
     <string name="en_route">En route</string>
-
-    <!-- TKChat -->
+    <string name="hint_username">Username</string>
+    <string name="hint_pwd">password</string>
+    <string name="hint_repwd">Re enter Password</string>
+    <string name="hint_mobile">Mobile No.</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_entercode">Enter code</string>
+    <string name="accept_txt">I accept the Terms &amp; Conditions.</string>
+    <string name="btn_login">LogIn</string>
+    <string name="phone_style">Moto G(Phone)</string>
+    <string name="amazon">Amazon</string>
+    <string name="shipping">Shipping</string>
+    <string name="cod">COD</string>
+    <string name="datetime">2 days ago</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forgot_pwd">Forgot Password</string>
+    <string name="verifycode">Please enter the 6 digit verification code sent to your email</string>
+    <string-array name="brew_array">
+        <item>Recent Purchases</item>
+        <item>Today</item>
+        <item>Yesterday</item>
+        <item>This Month</item>
+        <item>This Year</item>
+    </string-array>
     <string name="stylish_text">
         <u>More Info</u>
     </string>
     <string name="button_description">Emoticons Button</string>
+<string name="view_recommendations">View Recommendations</string>
+    <string name="years_warranty_has_started">2 Years  warranty has started</string>
+    <string name="date">15.09.2017</string>
+    <string name="cell_str1">18.03.2015,10 AM~12 PM</string>
+    <string name="scheduled">Scheduled\n a call</string>
+    <string name="schedule">Schedule\n a call</string>
+    <string name="send_time1">12:16 pm</string>
+    <string name="send_time2">11:27 am</string>
+    <string name="feedback">Feedback</string>
+    <string name="cell_str2">Packing was broken</string>
+    <string name="cell_str3">Recieved</string>
+    <string name="send_time3">10:52 am</string>
+    <string name="cell_str4">On the Way</string>
+    <string name="send_time4">9:26 am</string>
+    <string name="str_today">Today</string>
+    <string name="cell_item_str_product">Moto G(Phone)</string>
+    <string name="cell_item_str_shopname">Amazon</string>
+    <string name="cell_item_str_period">2 days ago</string>
+    <string name="cell_item_str_status1">En route</string>
+    <string name="cell_item_str_status2">Delivered</string>
+    <string name="cell_item_str_warning">1</string>
+    <string name="detail">You Return Request is accepted, we will initiate the pick up and notify you soon.</string>
+    <string name="year">Year</string>
+    <string name="month">Month</string>
+    <string name="day">Day</string>
+    <string name="time">Time</string>
+    <string name="retur">Return</string>
+    <string name="exchange">Exchange</string>
+    <string name="next">Next</string>
+    <string name="edit">Edit</string>
+    <string name="hint1">Type description...</string>
+    <string name="simbol_pul">+</string>
+    <string name="btn_re_ex">Return/Exchng</string>
+    <string name="period">23 days \nremaining</string>
+    <string name="remaining_days">614 days remaining</string>
+    <string name="srr_warranty">2 years manufacturer warranty for \n Phone and for in the accessories.</string>
+    <string name="warranty">WARRANTY</string>
+    <string name="invoice_no">Invoice No:</string>
+    <string name="str_invoice_no">867467HJ5</string>
+    <string name="price">Price:</string>
+    <string name="str_price">RS. 12999</string>
+    <string name="card">Card:</string>
+    <string name="str_card">Citibank Debit</string>
+    <string name="date1">Date:</string>
+    <string name="str_date1">12.09.2017</string>
+    <string name="timeline">TIMELINE</string>
+    <string name="send">Send</string>
+    <string name="chat">Chat</string>
+    <string name="back">back</string>
+    <string name="term_condition">Terms &amp; Conditions</string>
+    <string name="sms">Please enter the 4 digit code that has been sent to you via SMS</string>
+    <string name="hintzero">0</string>
+    <string name="condition_detail">&quot;Booking Services&quot; means the services set forth in paragraph 4 of this Part1, which shall be provided to you by Uber UK acting as the agent of the Transportation Provider. \n
+&quot;PHV&quot; means private hire vehicle. \n
+&quot;Transportation Provider&quot; means the provider to you of transportation services, including any drivers licensed to carry out private hire bookings in accordance with the PHV Regulations. \n
+&quot;Uber London&quot; shall mean Uber London Limited, a private limited liability company incorporated and registered in England and Wales with company number 8014782, whose registered office is at Alogate Tower, First Floor, 2 Leman Street, London E1 8FA. \n
+&quot;Uber Britannia&quot; shall mean Uber Britannia Limited, a private limited liability company incorporated and registered in England and Wales with company number 8823469, whose registered office is at Aldgate Tower, First Floor, 2 Leman Street, London, E1 8FA. \n
+&quot;Uber NIR&quot; shall mean Uber NIR Limited, a private limited liability company incorporated and registered in England and Wales with company number 9783280, whose registered office is at Aldgate Tower, First Floor.2 Leman Street, London, E1 8FA. \n
+&quot;Uber Scot&quot; shall mean Uber Scot Limited, a private limited liability company incorporated and registered office is at 93 George Street, Edinburgh, Scotland, EH2 3ES.</string>
 
+<string name="product_detail_str">Fast 4G LTE speed, up to 2.0 GHz octa-core processor,4GB of RAM, and a bright 5.2 full HD (1080p) display ensures videos and games run smoothly and look great. \n
+Enjoy the best of Google Android 7.0 Nougat, including Google Play Store, Google Maps, Gmail and more. \n
+Take brilliant photos with the 12 MP HD camera or snap group shots with a 5 MP wide-angle selfie cam. Add up to 128 GB of additional storage with a microSD card. \n
+The all-day battery includes TurboPower (TM) charging which provides up to 6 hours of use in just 15 minutes. \n
+Unlocked and carrier-friendly, works with all major carrier networks domestically or abroad \n
+The fingerprint sensor instantly unlocks your phone</string>
+    <string name="errcode">Please enter the correct code</string>
+    <string name="countrycode_phonenumber">Please verify your country code and phone number</string>
+    <string name="ninetyone">91</string>
+    <string name="nums">9857556712</string>
     <!-- Error message -->
     <string name="something_went_wrong">Something went wrong!</string>
 </resources>

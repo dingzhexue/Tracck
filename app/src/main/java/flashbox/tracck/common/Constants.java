@@ -12,6 +12,12 @@ public class Constants {
     public static final int MSG_VIEW_RECOMMEND = 5;
 
     /**
+     * TKPurchase Type
+     */
+    public static final int PURCHASE_HEADER = 0;
+    public static final int PURCHASE_ITEM = 1;
+
+    /**
      * Time Period Values
      */
     public static final String[] arrTimePeriods = new String[]{

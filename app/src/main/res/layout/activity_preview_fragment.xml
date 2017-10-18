@@ -6,21 +6,21 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="5dp"
+        android:layout_height="@dimen/WH_0dp"
+        android:padding="@dimen/padding_5dp"
         android:layout_weight="0.1"
         android:gravity="center_vertical|right">
 
         <ImageView
             android:id="@+id/imgClose"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="10dp"
-            android:background="@mipmap/close"/>
+            android:layout_width="@dimen/WH_20dp"
+            android:layout_height="@dimen/WH_20dp"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:background="@mipmap/ic_close"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/WH_0dp"
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_weight="0.2">
@@ -29,29 +29,29 @@
             android:id="@+id/product_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Moto G(Phone)"/>
+            android:text="@string/phone_style"/>
         <TextView
             android:id="@+id/shop_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_10dp"
             android:textColor="@android:color/holo_blue_light"
-            android:text="Amazon"/>
+            android:text="@string/amazon"/>
         </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_slider"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/WH_0dp"
         android:layout_weight="1"
         />
     <LinearLayout
         android:id="@+id/ll_dots"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/WH_30dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/margin_30dp"
         android:gravity="center"
         android:orientation="horizontal"></LinearLayout>
 

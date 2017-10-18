@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingRight="5dp"
-    android:paddingLeft="25dp"
+    android:paddingRight="@dimen/padding_5dp"
+    android:paddingLeft="@dimen/padding_25dp"
     android:orientation="vertical">
 
     <TextView
@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/darker_gray"
-        android:text="15.09.2017"
-        android:layout_marginBottom="5dp"
+        android:text="@string/date"
+        android:layout_marginBottom="@dimen/margin_5dp"
         android:id="@+id/txtDate"
         android:layout_gravity="center_horizontal" />
 
@@ -24,11 +24,11 @@
         android:layout_gravity="center_vertical">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/margin_35dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="2 Years  warranty has started"
-            android:textSize="18dp"
-            android:textColor="#29b2ef"
+            android:text="@string/years_warranty_has_started"
+            android:textSize="@dimen/textsize_18sp"
+            android:textColor="@color/colorBlue"
             android:textAlignment="center"
             android:layout_gravity="center"
             android:background="@drawable/roundwhite"

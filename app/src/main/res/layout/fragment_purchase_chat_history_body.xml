@@ -6,13 +6,13 @@
     android:id="@+id/list_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="@dimen/WH_55dp"
         android:orientation="horizontal"
         android:gravity="center_vertical">
        <ImageView
-           android:layout_width="15dp"
-           android:layout_height="15dp"
-           android:layout_marginLeft="10dp"
+           android:layout_width="@dimen/margin_15dp"
+           android:layout_height="@dimen/margin_15dp"
+           android:layout_marginLeft="@dimen/margin_10dp"
            android:src="@mipmap/ic_status"/>
         <TextView
             android:layout_width="wrap_content"
@@ -23,11 +23,11 @@
     <ListView
         android:id="@+id/LstChat"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/WH_0dp"
         android:layout_weight="1"
         android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll"
-        android:dividerHeight="0dp"
+        android:dividerHeight="@dimen/WH_0dp"
         android:divider="@null"
         android:background="@color/colorGray"/>
 

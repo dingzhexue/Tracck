@@ -1,16 +1,15 @@
 package flashbox.tracck.model;
 
-public class TKPurchase implements Comparable {
-
+public class TKPurchase {
     private String strProductName;
     private String strShopName;
     private String strPeriod;
     private String strStatus;
     private String strWarning;
     private String strGroup;
-    private boolean isSectionHeader;
+    private int intItemType;
 
-    public TKPurchase(String strProductName, String strShopName, String strPeriod, String strStatus, String strWarning, String strGroup)
+    public TKPurchase(String strProductName, String strShopName, String strPeriod, String strStatus, String strWarning, String strGroup, int intItemType)
     {
         this.strProductName = strProductName;
         this.strShopName = strShopName;
@@ -18,7 +17,7 @@ public class TKPurchase implements Comparable {
         this.strStatus = strStatus;
         this.strWarning = strWarning;
         this.strGroup = strGroup;
-        this.isSectionHeader = false;
+        this.intItemType = intItemType;
     }
 
     public String getStrProductName()
@@ -46,20 +45,12 @@ public class TKPurchase implements Comparable {
         return strWarning;
     }
 
-    public void setToSectionHeader()
-    {
-        isSectionHeader = true;
-    }
+    public int getItemType() { return intItemType; }
 
     public String getStrGroup() { return strGroup;}
 
-    public boolean isSectionHeader()
+    public void setItemType(int intItemType)
     {
-        return isSectionHeader;
-    }
-
-    @Override
-    public int compareTo(Object another) {
-        return this.strGroup.compareTo(((TKPurchase)another).strGroup);
+        this.intItemType = intItemType;
     }
 }

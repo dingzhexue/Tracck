@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
+    android:paddingLeft="@dimen/padding_5dp"
+    android:paddingRight="@dimen/padding_5dp"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,22 +12,22 @@
         android:orientation="horizontal"
         android:gravity="right"
         android:layout_gravity="center">
-        <Button
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/WH_35dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Recieved"
-            android:textSize="13dp"
+            android:text="@string/cell_str3"
+            android:textSize="@dimen/textsize_13sp"
             android:textColor="@android:color/black"
             android:layout_gravity="right"
-            android:background="@drawable/roundgreenshadow"
+            android:background="@drawable/roundgreenlight"
             android:id="@+id/btnMsg"
             android:foregroundGravity="center"
             android:gravity="center" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/check"
+            android:background="@mipmap/ic_check"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"/>
     </LinearLayout>
@@ -40,11 +40,11 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/darker_gray"
-            android:text="10:52 am"
+            android:text="@string/send_time3"
             android:id="@+id/txtTime"
             android:layout_gravity="right"
-            android:layout_marginTop="5dp"
-            android:paddingRight="30dp"/>
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:paddingRight="@dimen/padding_30dp"/>
 
     </LinearLayout>
 

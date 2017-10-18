@@ -6,9 +6,11 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -16,31 +18,37 @@ import java.util.Collections;
 
 import flashbox.tracck.R;
 import flashbox.tracck.base.TKBaseActivity;
+import flashbox.tracck.common.Common;
 import flashbox.tracck.connect.amazon.ui.TKAmazonLoginActivity;
 import flashbox.tracck.home.TKHomeActivity;
 import flashbox.tracck.home.TKPurchaseListAdapter;
 import flashbox.tracck.model.TKPurchase;
 
 public class TKArchiveActivity extends TKBaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,SearchView.OnQueryTextListener {
     private ListView listView;
     private TKPurchaseListAdapter listAdapter;
+    private ArrayList<TKPurchase> items;
+    private SearchView mSearchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.archive);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
     }
 
     @Override
     protected void initUI() {
         super.initUI();
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, mToolBar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -59,21 +67,39 @@ public class TKArchiveActivity extends TKBaseActivity
         staticSpinner.setAdapter(staticAdapter);
 
         // Setting List
+        mSearchView=(SearchView)findViewById(R.id.search);
         listView = (ListView) findViewById(R.id.item_list);
 
-        ArrayList items = new ArrayList();
+        items = Common.getArchived();
 
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "En route",null, "Today"));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "Delivered","1", "Today"));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "Service","2", "Today"));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "Packing",null, "Yesterday"));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "Delivered","2", "Yesterday"));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "Service","1", "Yesterday"));
-
-        items = sortAndAddSections(items);
+//        items = sortAndAddSections(items);
         listAdapter = new TKPurchaseListAdapter(this, items);
         listView.setAdapter(listAdapter);
+        setupSearchView();
     }
+    private void setupSearchView()
+    {
+        mSearchView.setOnQueryTextListener(this);
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText)
+    {
+        listAdapter.getFilter().filter(newText);
+//        if (TextUtils.isEmpty(newText)) {
+//            mListView.clearTextFilter();
+//        } else {
+//            mListView.setFilterText(newText);
+//        }
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query)
+    {
+        return false;
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -112,27 +138,5 @@ public class TKArchiveActivity extends TKBaseActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private ArrayList sortAndAddSections(ArrayList itemList) {
-
-        ArrayList tempList = new ArrayList();
-        //First we sort the array
-        Collections.sort(itemList);
-
-        //Loops thorugh the list and add a section before each sectioncell start
-        String header = "";
-        for (int i = 0; i < itemList.size(); i++) {
-            //If it is the start of a new section we create a new TKPurchase and add it to our array
-            if (header != ((TKPurchase) itemList.get(i)).getStrGroup()) {
-                TKPurchase sectionCell = new TKPurchase(null, null, null, null, null, ((TKPurchase) itemList.get(i)).getStrGroup());
-                sectionCell.setToSectionHeader();
-                tempList.add(sectionCell);
-                header = ((TKPurchase) itemList.get(i)).getStrGroup();
-            }
-            tempList.add(itemList.get(i));
-        }
-
-        return tempList;
     }
 }

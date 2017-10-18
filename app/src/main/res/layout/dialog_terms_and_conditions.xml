@@ -2,16 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="20dp">
+    android:layout_marginLeft="@dimen/margin_10dp"
+    android:layout_marginRight="@dimen/margin_10dp"
+    android:layout_marginTop="@dimen/margin_20dp"
+    android:layout_marginBottom="@dimen/margin_20dp">
 
     <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="@dimen/WH_25dp"
+        android:layout_height="@dimen/WH_25dp"
         android:id="@+id/imgClose"
-        android:src="@mipmap/close"
+        android:src="@mipmap/ic_close"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -20,34 +20,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tracck"
+        android:text="@string/app_name"
         android:id="@+id/textProductName"
         android:layout_below="@+id/imgClose"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        />
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Terms &amp; Conditions"
+        android:text="@string/term_condition"
         android:id="@+id/txtShopName"
         android:layout_below="@+id/textProductName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_10dp"
         android:textColor="@color/colorBlue" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/txtShopName"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,13 +55,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:text="&quot;Booking Services&quot; means the services set forth in paragraph 4 of this Part1, which shall be provided to you by Uber UK acting as the agent of the Transportation Provider. \n
-&quot;PHV&quot; means private hire vehicle. \n
-&quot;Transportation Provider&quot; means the provider to you of transportation services, including any drivers licensed to carry out private hire bookings in accordance with the PHV Regulations. \n
-&quot;Uber London&quot; shall mean Uber London Limited, a private limited liability company incorporated and registered in England and Wales with company number 8014782, whose registered office is at Alogate Tower, First Floor, 2 Leman Street, London E1 8FA. \n
-&quot;Uber Britannia&quot; shall mean Uber Britannia Limited, a private limited liability company incorporated and registered in England and Wales with company number 8823469, whose registered office is at Aldgate Tower, First Floor, 2 Leman Street, London, E1 8FA. \n
-&quot;Uber NIR&quot; shall mean Uber NIR Limited, a private limited liability company incorporated and registered in England and Wales with company number 9783280, whose registered office is at Aldgate Tower, First Floor.2 Leman Street, London, E1 8FA. \n
-&quot;Uber Scot&quot; shall mean Uber Scot Limited, a private limited liability company incorporated and registered office is at 93 George Street, Edinburgh, Scotland, EH2 3ES."
-            android:layout_marginRight="10dp" />
+            android:text="@string/condition_detail"
+            android:layout_marginRight="@dimen/margin_10dp" />
     </ScrollView>
 </RelativeLayout>

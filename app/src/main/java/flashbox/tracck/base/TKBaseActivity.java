@@ -3,11 +3,9 @@ package flashbox.tracck.base;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
-import android.support.annotation.IdRes;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.gpit.android.logger.RemoteLogger;
@@ -22,6 +20,7 @@ import flashbox.tracck.R;
 
 public abstract class TKBaseActivity extends BaseActivity {
     protected Toolbar mToolBar;
+    protected Toolbar mToolBarA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +47,8 @@ public abstract class TKBaseActivity extends BaseActivity {
         super.onDestroy();
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -55,10 +56,13 @@ public abstract class TKBaseActivity extends BaseActivity {
                 super.onBackPressed();
                 // NavUtils.navigateUpFromSameTask(this);
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
     @Override
     @CallSuper
@@ -69,18 +73,33 @@ public abstract class TKBaseActivity extends BaseActivity {
         if (mToolBar != null) {
             setSupportActionBar(mToolBar);
 
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            if (drawer != null) {
-                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                        this, drawer, mToolBar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-                drawer.setDrawerListener(toggle);
-                toggle.syncState();
+//            getSupportActionBar().setTitle(R.string.home);
+            getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_back);
+            mToolBar.setNavigationIcon(R.mipmap.ic_back);
+            mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
             }
+
+//        mToolBarA = (Toolbar) findViewById(R.id.toolbarArchive);
+//        if (mToolBarA != null) {
+//            setSupportActionBar(mToolBarA);
+//
+//            getSupportActionBar().setTitle(R.string.archive);
+//            getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_back);
+//            mToolBarA.setNavigationIcon(R.mipmap.ic_back);
+//            mToolBarA.setNavigationOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    finish();
+//                }
+//            });
+//        }
         }
-    }
+
 
     @CallSuper
     @Override

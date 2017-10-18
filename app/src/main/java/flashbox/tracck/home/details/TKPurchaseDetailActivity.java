@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,8 +15,10 @@ import android.widget.TextView;
 
 import flashbox.tracck.R;
 import flashbox.tracck.base.TKBaseActivity;
+import flashbox.tracck.common.Common;
 import flashbox.tracck.home.TKPreviewActivity;
 import flashbox.tracck.home.chat.TKPurchaseChatFragment;
+import flashbox.tracck.model.TKPurchase;
 
 public class TKPurchaseDetailActivity extends TKBaseActivity {
     private boolean isLessInfo;
@@ -26,6 +29,33 @@ public class TKPurchaseDetailActivity extends TKBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_detail);
+
+        TextView txtProductName = (TextView) findViewById(R.id.txtProductName);
+        TextView txtShopName = (TextView) findViewById(R.id.txtShopName);
+        Button btnStatus = (Button) findViewById(R.id.btnStatus);
+        TextView txtPeriod = (TextView) findViewById(R.id.txtPeriod);
+
+        TKPurchase purchase = Common.getPurchase();
+
+        txtProductName.setText(purchase.getStrProductName());
+        txtShopName.setText(purchase.getStrShopName());
+        btnStatus.setText(purchase.getStrStatus());
+
+        switch (purchase.getStrStatus()) {
+            case "En route":
+                btnStatus.setBackgroundResource(R.drawable.roundyellow);
+                break;
+            case "Delivered":
+                btnStatus.setBackgroundResource(R.drawable.roundgreen);
+                break;
+            case "Service":
+                btnStatus.setBackgroundResource(R.drawable.roundred);
+                break;
+            case "Packing":
+                btnStatus.setBackgroundResource(R.drawable.roundpurple);
+                break;
+        }
+        txtPeriod.setText(purchase.getStrPeriod());
     }
 
     @Override
@@ -97,13 +127,13 @@ public class TKPurchaseDetailActivity extends TKBaseActivity {
             }
         });
 
-        ImageButton btnBack = (ImageButton) findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+//        ImageButton btnBack = (ImageButton) findViewById(R.id.btnBack);
+//        btnBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
     }
 
     @Override

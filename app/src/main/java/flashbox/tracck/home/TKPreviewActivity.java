@@ -97,9 +97,9 @@ public class TKPreviewActivity extends TKBaseActivity {
         //Add few items to slider_image_list ,this should contain url of images which should be displayed in slider
         // here i am adding few sample image links, you can add your own
 
-        slider_image_list.add(R.mipmap.purchaseimg);
-        slider_image_list.add(R.mipmap.purchaseimgone);
-        slider_image_list.add(R.mipmap.purchaseimgtwo);
+        slider_image_list.add(R.mipmap.ic_purchaseimg);
+        slider_image_list.add(R.mipmap.ic_purchaseimgone);
+        slider_image_list.add(R.mipmap.ic_purchaseimgtwo);
         sliderPagerAdapter = new TKSliderPagerAdapter(TKPreviewActivity.this, slider_image_list);
         vp_slider.setAdapter(sliderPagerAdapter);
         vp_slider.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

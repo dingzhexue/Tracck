@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="20dp">
+    android:paddingRight="@dimen/padding_5dp"
+    android:paddingLeft="@dimen/padding_5dp"
+    android:paddingBottom="@dimen/padding_5dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/returnexchange">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/WH_0dp"
             android:gravity="right"
-            android:layout_weight="0.05">
+            android:layout_weight="0.05"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:layout_marginRight="@dimen/margin_10dp">
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@mipmap/close"
+                android:layout_width="@dimen/WH_20dp"
+                android:layout_height="@dimen/WH_20dp"
+                android:background="@mipmap/ic_close"
                 android:id="@+id/imgClose" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/WH_0dp"
             android:orientation="horizontal"
             android:layout_weight="0.2"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/margin_10dp">
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/WH_0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="0.6">
@@ -41,18 +44,18 @@
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Moto G(Phone)"/>
+                    android:text="@string/cell_item_str_product"/>
                 <TextView
                     android:id="@+id/txt_showname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
                     android:textColor="@android:color/holo_blue_light"
-                    android:text="Amazon"
-                    android:textSize="16sp" />
+                    android:text="@string/cell_item_str_shopname"
+                    android:textSize="@dimen/textsize_16sp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/WH_0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="0.4"
@@ -61,14 +64,14 @@
                     android:id="@+id/txt_period"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2 days ago"/>
+                    android:text="@string/cell_item_str_period"/>
                 <Button
                     android:id="@+id/btn_status"
-                    android:layout_width="100dp"
-                    android:layout_height="27dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="@dimen/WH_100dp"
+                    android:layout_height="@dimen/WH_27dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
                     android:textAllCaps="false"
-                    android:text="Delivered"
+                    android:text="@string/cell_item_str_status2"
                     android:textColor="@android:color/white"
                     android:background="@drawable/roundgreen"/>
             </LinearLayout>
@@ -76,7 +79,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/WH_0dp"
             android:orientation="vertical"
             android:layout_weight="0.75">
 
@@ -87,4 +90,4 @@
                 layout="@layout/fragment_purchase_setting" />
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
