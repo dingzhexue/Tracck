@@ -94,7 +94,7 @@ public abstract class TKPhoneCommonActivity extends TKBaseActivity {
 
                 // [START_EXCLUDE silent]
                 // Update the UI and attempt sign in with the phone credential
-                updateUI(STATE_VERIFY_SUCCESS, credential);
+                updateUI(STATE_VERIFY_SUCCESS, mAuth.getCurrentUser(), credential);
                 // [END_EXCLUDE]
                 signInWithPhoneAuthCredential(credential);
             }
@@ -290,36 +290,43 @@ public abstract class TKPhoneCommonActivity extends TKBaseActivity {
     }
 
     protected void updateUI(int uiState, final FirebaseUser user, PhoneAuthCredential cred) {
+        String userName = user != null ? user.getDisplayName() : null;
+        String phoneNumber = getPhoneNumber();
+
         switch (uiState) {
             case STATE_VERIFY_SUCCESS:
                 if (cred != null) {
                     if (cred.getSmsCode() != null) {
-                        onSMSVerified(user);
+                        onSMSVerified(userName, phoneNumber);
                     }
                 }
 
                 break;
             case STATE_SIGNIN_SUCCESS:
-                onSMSVerified(user);
+                onSMSVerified(userName, phoneNumber);
                 break;
         }
     }
 
-    protected void onSMSVerified(final FirebaseUser user) {
+    protected void onSMSVerified(String username, String phoneNumber) {
         TKDatabase.getInstance().setSMSVerified(true);
 
-        signup(user);
+        if (username == null) {
+            username = phoneNumber;
+        }
+
+        signup(username, phoneNumber);
     }
 
-    private void signup(final FirebaseUser user) {
+    private void signup(final String userName, final String phoneNumber) {
         // Lets signup
-        final TKSignupAPI api = new TKSignupAPI(this, user.getDisplayName(), user.getPhoneNumber());
+        final TKSignupAPI api = new TKSignupAPI(this, userName, phoneNumber);
         api.exec(new OnCommonAPICompleteListener<TKSignupAPI>(this) {
             @Override
             public void onCompleted(TKSignupAPI webapi) {
                 // Store account info
                 TKAccount.getInstance().saveAccountInfo(api.id, getPhoneNumber(),
-                        user.getDisplayName(), System.currentTimeMillis());
+                        userName, System.currentTimeMillis());
                 gotoAmazonLogin();
             }
 
