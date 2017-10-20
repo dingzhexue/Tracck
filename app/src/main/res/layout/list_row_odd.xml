@@ -22,10 +22,12 @@
             android:layout_gravity="right"
             android:background="@drawable/roundgreenlight"
             android:id="@+id/btnMsg"
+            android:paddingLeft="@dimen/margin_10dp"
+            android:paddingRight="@dimen/margin_10dp"
             android:foregroundGravity="center"
             android:gravity="center" />
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/WH_25dp"
             android:layout_height="wrap_content"
             android:background="@mipmap/ic_check"
             android:layout_marginLeft="10dp"

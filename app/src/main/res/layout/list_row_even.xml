@@ -18,6 +18,8 @@
             android:textSize="@dimen/textsize_13sp"
             android:textColor="@android:color/black"
             android:layout_gravity="left|center"
+            android:paddingLeft="@dimen/margin_10dp"
+            android:paddingRight="@dimen/margin_10dp"
             android:gravity="center"
             android:background="@drawable/roundwhite"
             android:id="@+id/btnMsg" />

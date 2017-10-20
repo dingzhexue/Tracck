@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -33,6 +33,11 @@
         <item name="android:windowExitAnimation">@anim/translate_to_top</item>
     </style>
 
+    <style name="YourStyleNameFor.NavigationDrawer" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlHighlight">@color/colorGreen</item>
+
+    </style>
+
     <style name="LeftToRightMessageDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:windowAnimationStyle">@style/LeftToRightMessageDialogAnimation</item>
     </style>
@@ -45,7 +50,7 @@
     <style name="AppPrimaryButton" parent="android:Widget.Button">
         <item name="android:padding">@dimen/common_padding_small2</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:background">@color/colorButtonBg</item>
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <style name="AppToolbarColoredBackArrow" parent="AppTheme">

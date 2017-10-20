@@ -36,7 +36,7 @@ public class TKPurchaseDetailActivity extends TKBaseActivity {
         TextView txtPeriod = (TextView) findViewById(R.id.txtPeriod);
 
         TKPurchase purchase = Common.getPurchase();
-
+        if (purchase != null) {
         txtProductName.setText(purchase.getStrProductName());
         txtShopName.setText(purchase.getStrShopName());
         btnStatus.setText(purchase.getStrStatus());
@@ -57,14 +57,11 @@ public class TKPurchaseDetailActivity extends TKBaseActivity {
         }
         txtPeriod.setText(purchase.getStrPeriod());
     }
+    }
 
     @Override
     protected void initUI() {
         super.initUI();
-
-        // getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        // getSupportActionBar().setDisplayShowTitleEnabled(false);
-        // getSupportActionBar().hide();
 
         LinearLayout parentLayout = (LinearLayout) findViewById(R.id.llDetail);
 
@@ -126,14 +123,6 @@ public class TKPurchaseDetailActivity extends TKBaseActivity {
                 }
             }
         });
-
-//        ImageButton btnBack = (ImageButton) findViewById(R.id.btnBack);
-//        btnBack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
     }
 
     @Override

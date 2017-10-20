@@ -19,6 +19,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/view_recommendations"
             android:textSize="@dimen/textsize_18sp"
+            android:paddingLeft="@dimen/margin_10dp"
+            android:paddingRight="@dimen/margin_10dp"
             android:textColor="@android:color/white"
             android:textAlignment="center"
             android:layout_gravity="center"

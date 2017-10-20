@@ -24,6 +24,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="settings">Settings</string>
+    <string name="hom">Home</string>
+    <string name="arc">Archive</string>
 
     <!-- Draw Menu-->
     <string name="home">Home</string>

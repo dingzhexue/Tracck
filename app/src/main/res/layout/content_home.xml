@@ -48,6 +48,10 @@
             <com.baoyz.swipemenulistview.SwipeMenuListView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:clickable="true"
+                android:dividerHeight="1dp"
+                android:scrollingCache="false"
+                android:smoothScrollbar="true"
                 android:id="@+id/item_list">
 
             </com.baoyz.swipemenulistview.SwipeMenuListView>

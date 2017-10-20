@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -34,7 +35,7 @@ public class TKArchiveActivity extends TKBaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_archive);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -55,16 +56,7 @@ public class TKArchiveActivity extends TKBaseActivity
 
         // Setting spinner
         Spinner staticSpinner = (Spinner) findViewById(R.id.spinnerview);
-
-        // Create an ArrayAdapter using the string array and a default spinner
-        ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter.createFromResource(this, R.array.brew_array,
-                android.R.layout.simple_spinner_dropdown_item);
-
-        // Specify the layout to use when the list of choices sppears
-        staticAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // Apply the adapter to the spinner
-        staticSpinner.setAdapter(staticAdapter);
+        ((ViewGroup) staticSpinner.getParent()).removeView(staticSpinner);
 
         // Setting List
         mSearchView=(SearchView)findViewById(R.id.search);
@@ -129,7 +121,7 @@ public class TKArchiveActivity extends TKBaseActivity
         } else if (id == R.id.nav_profile) {
 
         } else if (id == R.id.nav_settings) {
-
+            Common.showTermsDialog(this);
         } else if (id == R.id.nav_signout) {
             Intent intent = new Intent(TKArchiveActivity.this, TKAmazonLoginActivity.class);
             startActivity(intent);

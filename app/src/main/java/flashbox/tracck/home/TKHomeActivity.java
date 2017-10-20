@@ -1,5 +1,7 @@
 package flashbox.tracck.home;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,11 +10,20 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
@@ -28,6 +39,7 @@ import flashbox.tracck.common.Common;
 import flashbox.tracck.common.Constants;
 import flashbox.tracck.connect.amazon.ui.TKAmazonLoginActivity;
 import flashbox.tracck.home.archive.TKArchiveActivity;
+import flashbox.tracck.home.details.TKPurchaseDetailActivity;
 import flashbox.tracck.model.TKPurchase;
 
 /**
@@ -63,7 +75,7 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
         navigationView.setNavigationItemSelectedListener(this);
 
         // Setting spinner
-        Spinner staticSpinner = (Spinner) findViewById(R.id.spinnerview);
+        final Spinner staticSpinner = (Spinner) findViewById(R.id.spinnerview);
 
         // Create an ArrayAdapter using the string array and a default spinner
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter.createFromResource(this, R.array.brew_array,
@@ -80,16 +92,36 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
         mListView = (SwipeMenuListView) findViewById(R.id.item_list);
         mListView.setSwipeDirection(SwipeMenuListView.DIRECTION_LEFT);
 
+        staticSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String strSpinner =  staticSpinner.getSelectedItem().toString();
+
+                if(items != null) {
+                    items = new ArrayList<TKPurchase>();
+                    mListAdapter = new TKPurchaseListAdapter(TKHomeActivity.this, items);
+                    // To show all of purcharse type
+                    insertDummyData(strSpinner);
+                    mListView.setAdapter(mListAdapter);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         if (items == null) {
             items = new ArrayList<TKPurchase>();
             mListAdapter = new TKPurchaseListAdapter(this, items);
 
             // To show all of purcharse type
-            insertDummyData();
+            insertDummyData("");
         }
         mListView.setAdapter(mListAdapter);
-
         setupSearchView();
+
 //        mListView.setTextFilterEnabled(true);
         SwipeMenuCreator creator = new SwipeMenuCreator() {
             @Override
@@ -100,11 +132,11 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
                 // set item background
                 openItem.setBackground(R.color.colorBlue);
                 // set item width
-                openItem.setWidth(dp2px(120));
+                openItem.setWidth(dp2px(110));
                 // set item title
                 openItem.setTitle("ARCHIVE");
                 // set item title fontsize
-                openItem.setTitleSize(18);
+                openItem.setTitleSize(15);
                 // set item title font color
                 openItem.setTitleColor(Color.WHITE);
                 // add to menu
@@ -140,35 +172,23 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
         });
 
         mListView.setOnMenuStateChangeListener(new SwipeMenuListView.OnMenuStateChangeListener() {
-
             @Override
-
             public void onMenuOpen(int position) {
-
             }
 
             @Override
-
             public void onMenuClose(int position) {
-
             }
-
         });
 
         mListView.setOnSwipeListener(new SwipeMenuListView.OnSwipeListener() {
-
             @Override
-
             public void onSwipeStart(int position) {
-
             }
 
             @Override
-
             public void onSwipeEnd(int position) {
-
             }
-
         });
     }
 
@@ -195,16 +215,58 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
         return false;
     }
 
-    private void insertDummyData() {
-        items.add(new TKPurchase(null, null, null, null, null, "Today", Constants.PURCHASE_HEADER));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "5 mins ago", "En route", null, "Today", Constants.PURCHASE_ITEM));
-        items.add(new TKPurchase("Philips Hair Dryer","Amazon", "2 days ago", "Delivered","2", "Today", Constants.PURCHASE_ITEM));
-        items.add(new TKPurchase("Samsung Refrigirant","Amazon", "1 years ago", "Service","1", "Today", Constants.PURCHASE_ITEM));
-        items.add(new TKPurchase(null, null, null, null, null, "Yesterday", Constants.PURCHASE_HEADER));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "5 mins ago", "Packing",null, "Yesterday", Constants.PURCHASE_ITEM));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "Delivered","2", "Yesterday", Constants.PURCHASE_ITEM));
-        items.add(new TKPurchase("Moto G(Phone)","Amazon", "2 days ago", "Service","1", "Yesterday", Constants.PURCHASE_ITEM));
-
+    private void insertDummyData(String str) {
+        if(str.equals("")) {
+            items.add(new TKPurchase(null, null, null, null, null, "Today", Constants.PURCHASE_HEADER));
+            items.add(new TKPurchase("Moto G(Phone)", "Amazon", "5 mins ago", "En route", null, "Today", Constants.PURCHASE_ITEM));
+            items.add(new TKPurchase("Philips Hair Dryer", "Amazon", "2 hour ago", "Delivered", "2", "Today", Constants.PURCHASE_ITEM));
+            items.add(new TKPurchase("Samsung Refrigirant", "Amazon", "1 hour ago", "Service", "1", "Today", Constants.PURCHASE_ITEM));
+            items.add(new TKPurchase(null, null, null, null, null, "Yesterday", Constants.PURCHASE_HEADER));
+            items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 days ago", "Packing", null, "Yesterday", Constants.PURCHASE_ITEM));
+            items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 days ago", "Delivered", "2", "Yesterday", Constants.PURCHASE_ITEM));
+            items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 days ago", "Service", "1", "Yesterday", Constants.PURCHASE_ITEM));
+        }
+        else
+        {
+            if(str.equals("Recent Purchases")){
+                items.add(new TKPurchase(null, null, null, null, null, "Today", Constants.PURCHASE_HEADER));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "5 mins ago", "En route", null, "Today", Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Philips Hair Dryer", "Amazon", "2 hours ago", "Delivered", "2", "Today", Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Samsung Refrigirant", "Amazon", "1 hour ago", "Service", "1", "Today", Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase(null, null, null, null, null, "Yesterday", Constants.PURCHASE_HEADER));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 day ago", "Packing", null, "Yesterday", Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 day ago", "Delivered", "2", "Yesterday", Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 day ago", "Service", "1", "Yesterday", Constants.PURCHASE_ITEM));
+            }else if(str.equals("Today"))
+            {
+                items.add(new TKPurchase(null, null, null, null, null, str, Constants.PURCHASE_HEADER));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "5 mins ago", "En route", null, str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Philips Hair Dryer", "Amazon", "3 hours ago", "Delivered", "2", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Samsung Refrigirant", "Amazon", "1 hour ago", "Service", "1", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "30 mins ago", "Packing", null, str, Constants.PURCHASE_ITEM));
+            }else if(str.equals("Yesterday"))
+            {
+                items.add(new TKPurchase(null, null, null, null, null, str, Constants.PURCHASE_HEADER));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 day ago", "En route", null, str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Philips Hair Dryer", "Amazon", "1 day ago", "Delivered", "2", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Samsung Refrigirant", "Amazon", "1 day ago", "Service", "1", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "1 day ago", "Packing", null, str, Constants.PURCHASE_ITEM));
+            }else if(str.equals("This Month"))
+            {
+                items.add(new TKPurchase(null, null, null, null, null, str, Constants.PURCHASE_HEADER));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "15 days ago", "En route", null, str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Philips Hair Dryer", "Amazon", "2 days ago", "Delivered", "2", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Samsung Refrigirant", "Amazon", "7 days ago", "Service", "1", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "10 days ago", "Packing", null, str, Constants.PURCHASE_ITEM));
+            }else if(str.equals("This Year"))
+            {
+                items.add(new TKPurchase(null, null, null, null, null, str, Constants.PURCHASE_HEADER));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "5 months ago", "En route", null, str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Philips Hair Dryer", "Amazon", "2 months ago", "Delivered", "2", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Samsung Refrigirant", "Amazon", "1 month ago", "Service", "1", str, Constants.PURCHASE_ITEM));
+                items.add(new TKPurchase("Moto G(Phone)", "Amazon", "10 months ago", "Packing", null, str, Constants.PURCHASE_ITEM));
+            }
+        }
         mListAdapter.notifyDataSetChanged();
     }
 
@@ -254,6 +316,7 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
         } else if (id == R.id.nav_profile) {
 
         } else if (id == R.id.nav_settings) {
+            Common.showTermsDialog(this);
 
         } else if (id == R.id.nav_signout) {
             Intent intent = new Intent(TKHomeActivity.this, TKAmazonLoginActivity.class);
@@ -270,4 +333,6 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
 
                 getResources().getDisplayMetrics());
     }
-}
+  }
+
+

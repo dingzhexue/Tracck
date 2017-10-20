@@ -21,25 +21,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/year"
-                android:layout_marginLeft="@dimen/margin_20dp"
                 android:id="@+id/textView7"
-                android:layout_weight="0.3" />
+                android:layout_marginLeft="@dimen/margin_35dp"
+                android:gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/month"
-                android:layout_marginLeft="@dimen/textsize_13sp"
-                android:id="@+id/textView4"
-                android:layout_weight="0.3" />
+                android:layout_marginLeft="@dimen/margin_35dp"
+                android:id="@+id/textView4"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/day"
                 android:id="@+id/textView5"
-                android:layout_marginLeft="@dimen/margin_5dp"
-                android:layout_weight="0.3" />
+                android:layout_marginLeft="@dimen/margin_35dp" />
 
         </LinearLayout>
 
@@ -127,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:textAllCaps="false"
-                android:background="@android:color/darker_gray"
+                android:background="@color/darker_gray"
                 android:text="@string/exchange"/>
 
         </LinearLayout>

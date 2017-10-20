@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,18 +20,13 @@ import flashbox.tracck.home.details.TKPurchaseDetailActivity;
 import flashbox.tracck.model.TKPurchase;
 import android.widget.Filter;
 
-import com.gpit.android.ui.common.Constant;
-
-/**
- * Created by Security on 10/8/2017.
- */
 public class TKPurchaseListAdapter extends ArrayAdapter implements Filterable {
     private static final int TYPE_MAX_COUNT = Constants.PURCHASE_ITEM + 1;
-    LayoutInflater inflater;
-    Context context;
-
+    private LayoutInflater inflater;
+    private Context context;
     private ArrayList<TKPurchase> itemsTemp;
-    ArrayList<TKPurchase> search_items;
+    private ArrayList<TKPurchase> search_items;
+    private static TKPurchase curCell;
 
     public TKPurchaseListAdapter(Context context, ArrayList<TKPurchase> items) {
         super(context, 0, items);
@@ -119,20 +115,12 @@ public class TKPurchaseListAdapter extends ArrayAdapter implements Filterable {
                 case Constants.PURCHASE_ITEM:
                     convertView = inflater.inflate(R.layout.list_cell_item, null);
 
+                    holder.imgPriductPreview = convertView.findViewById(R.id.imgPriductPreview);
                     holder.txtProductName = convertView.findViewById(R.id.txtProductName);
                     holder.txtShopName = convertView.findViewById(R.id.txtShopName);
                     holder.txtPeriod = convertView.findViewById(R.id.txtPeriod);
                     holder.btnStatus = convertView.findViewById(R.id.btnStatus);
                     holder.btnWarning = convertView.findViewById(R.id.btnWarning);
-
-                    holder.txtProductName.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(context, TKPurchaseDetailActivity.class);
-                            Common.setPurchase(cell);
-                            context.startActivity(intent);
-                        }
-                    });
 
                     break;
             }
@@ -144,7 +132,7 @@ public class TKPurchaseListAdapter extends ArrayAdapter implements Filterable {
 
         switch (rowType){
             case Constants.PURCHASE_HEADER:
-                holder.txtSectionHeader.setText(cell.getStrGroup());
+                holder.txtSectionHeader.setText(cell.getStrDate());
                 break;
             case Constants.PURCHASE_ITEM:
                 holder.txtProductName.setText(cell.getStrProductName());
@@ -173,14 +161,57 @@ public class TKPurchaseListAdapter extends ArrayAdapter implements Filterable {
                 } else {
                     holder.btnWarning.setVisibility(View.GONE);
                 }
+
+                holder.imgPriductPreview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onClickPurchaseItem(cell);
+                    }
+                });
+                holder.txtProductName.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onClickPurchaseItem(cell);
+                    }
+                });
+                holder.txtShopName.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onClickPurchaseItem(cell);
+                    }
+                });
+                holder.txtPeriod.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onClickPurchaseItem(cell);
+                    }
+                });
+                holder.btnStatus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onClickPurchaseItem(cell);
+                    }
+                });
+                holder.btnWarning.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onClickPurchaseItem(cell);
+                    }
+                });
                 break;
         }
 
         return convertView;
     }
 
+    public void onClickPurchaseItem(TKPurchase cell) {
+        Intent intent = new Intent(context, TKPurchaseDetailActivity.class);
+        Common.setPurchase(cell);
+        context.startActivity(intent);
+    }
 
     public static class ViewHolder {
+        ImageView imgPriductPreview;
         TextView txtSectionHeader;
         TextView txtProductName;
         TextView txtShopName;

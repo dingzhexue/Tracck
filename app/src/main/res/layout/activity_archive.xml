@@ -19,8 +19,14 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:paddingTop="@dimen/margin_60dp"
+        android:paddingLeft="@dimen/padding_35dp"
+        android:paddingRight="@dimen/padding_35dp"
         android:background="@color/colorBackground"
-        app:menu="@menu/activity_home_drawer"
-        app:itemTextColor="@drawable/nav_item_text"/>
+        app:menu="@menu/activity_archive_drawer"
+        app:itemTextAppearance="@android:style/TextAppearance.Large"
+        app:itemTextColor="@color/menu_text_color"
+        app:itemBackground="@drawable/menu_background_color"
+        />
 
 </android.support.v4.widget.DrawerLayout>

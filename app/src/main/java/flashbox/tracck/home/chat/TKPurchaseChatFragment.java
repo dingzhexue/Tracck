@@ -176,6 +176,24 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
             }
         });
 
+        final Button btnExchange = (Button) fragmentBody.findViewById(R.id.btn_exchange);
+        final Button btnReturn = (Button) fragmentBody.findViewById(R.id.btn_return);
+        btnExchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnReturn.setBackgroundResource(R.color.darker_gray);
+                btnExchange.setBackgroundResource(R.color.colorGreen);
+            }
+        });
+
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnReturn.setBackgroundResource(R.color.colorGreen);
+                btnExchange.setBackgroundResource(R.color.darker_gray);
+            }
+        });
+
         Button btnNext = (Button) fragmentBody.findViewById(R.id.btnNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override

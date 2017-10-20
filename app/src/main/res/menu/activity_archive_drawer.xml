@@ -4,10 +4,10 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:checked="true"
             android:title="@string/hom" />
         <item
             android:id="@+id/nav_archive"
+            android:checked="true"
             android:title="@string/arc" />
         <item
             android:id="@+id/nav_profile"

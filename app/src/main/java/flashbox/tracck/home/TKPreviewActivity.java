@@ -65,16 +65,9 @@ public class TKPreviewActivity extends TKBaseActivity {
                 }else{
                     page_position=page_position+1;
                 }
-                vp_slider.setCurrentItem(page_position,true);
             }
         };
-        Timer swipeTimer = new Timer();
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(update);
-            }
-        }, 50, 5000);
+
 
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int dialogWidth = displayMetrics.widthPixels * 1;
