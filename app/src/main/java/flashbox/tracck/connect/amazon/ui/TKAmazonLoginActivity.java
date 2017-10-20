@@ -13,11 +13,9 @@ import com.gpit.android.webapi.OnCommonAPICompleteListener;
 import butterknife.BindView;
 import butterknife.OnClick;
 import flashbox.tracck.R;
-import flashbox.tracck.api.TKSignupAPI;
 import flashbox.tracck.connect.TKCommonLoginActivity;
 import flashbox.tracck.connect.amazon.api.TKAmazonLoginAPI;
 import flashbox.tracck.home.TKHomeActivity;
-import flashbox.tracck.signin.TKPhoneCommonActivity;
 
 /**
  * Created by administrator on 8/11/17.

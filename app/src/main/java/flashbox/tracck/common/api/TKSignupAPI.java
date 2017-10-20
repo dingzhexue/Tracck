@@ -1,4 +1,4 @@
-package flashbox.tracck.api;
+package flashbox.tracck.common.api;
 
 import android.content.Context;
 
@@ -7,14 +7,13 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import flashbox.tracck.app.TKApp;
-import flashbox.tracck.model.TKAccount;
+import flashbox.tracck.api.TKBaseAPI;
 
 /**
  * Created by Administrator on 12/27/2016.
  */
 
-public class TKSignupAPI extends TKBaseAPI<TKSignupAPI> {
+public class TKSignupAPI extends TKBaseAPI<TKSignupAPI, TKSignUpAPIResponse> {
     private String mName;
     private String mPhoneNumber;
 
@@ -39,19 +38,6 @@ public class TKSignupAPI extends TKBaseAPI<TKSignupAPI> {
 
     @Override
     protected boolean handleResponse(JSONObject response) throws JSONException {
-        if (super.handleResponse(response)) {
-            // { "userid": "2", "username": "swayam1", "email": null, "status": "success", "error": "", "mobile": "1234567890" }
-            id = response.getString("userid");
-            String username = response.getString("username");
-            String mobile = response.getString("mobile");
-
-            // Store account info
-            TKAccount.getInstance().saveAccountInfo(id, mobile, username, System.currentTimeMillis());
-            ((TKApp)TKApp.getInstance()).setLoggedIn(true);
-
-            return true;
-        }
-
-        return false;
+        return super.handleResponse(response);
     }
 }

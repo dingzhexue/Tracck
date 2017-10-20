@@ -18,7 +18,7 @@ import flashbox.tracck.model.TKAccount;
  * Created by Administrator on 12/27/2016.
  */
 
-public class TKAmazonLoginAPI extends TKBaseAPI<TKAmazonLoginAPI> {
+public class TKAmazonLoginAPI extends TKBaseAPI<TKAmazonLoginAPI, TKAmazonLoginAPIResponse> {
     private String mUserID;
     private String mPassword;
     private String mOtp;
@@ -45,19 +45,6 @@ public class TKAmazonLoginAPI extends TKBaseAPI<TKAmazonLoginAPI> {
 
     @Override
     protected boolean handleResponse(JSONObject response) throws JSONException {
-        if (super.handleResponse(response)) {
-            // { "userid": "userid", "username": "username", "email": "sample@sample.com", "status": "success", "error": "" }
-            String id = response.getString("userid");
-            String username = response.getString("username");
-            String email = response.getString("email");
-
-            // Store account info
-            TKAmazonAccount.getInstance().saveAccountInfo(id, username, mPassword, email);
-            ((TKApp)TKApp.getInstance()).setLoggedIn(true);
-
-            return true;
-        }
-
-        return false;
+        return super.handleResponse(response);
     }
 }

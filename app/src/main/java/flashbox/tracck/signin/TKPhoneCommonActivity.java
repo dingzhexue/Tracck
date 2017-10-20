@@ -5,12 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,14 +22,10 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.gpit.android.logger.RemoteLogger;
 import com.gpit.android.util.Utils;
 import com.gpit.android.webapi.OnCommonAPICompleteListener;
-import com.hbb20.CountryCodePicker;
 
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.BindView;
-import flashbox.tracck.R;
-import flashbox.tracck.api.TKSignupAPI;
+import flashbox.tracck.common.api.TKSignupAPI;
 import flashbox.tracck.app.TKDatabase;
 import flashbox.tracck.base.TKBaseActivity;
 import flashbox.tracck.connect.amazon.ui.TKAmazonLoginActivity;
