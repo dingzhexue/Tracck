@@ -64,7 +64,9 @@
     <dimen name="WH_1dp">1dp</dimen>
     <dimen name="WH_90dp">90dp</dimen>
     <dimen name="WH_200dp">200dp</dimen>
-    <dimen name="WH_350dp">350dp</dimen>
+    <dimen name="WH_230dp">230dp</dimen>
+    <dimen name="WH_320dp">320dp</dimen>
+    <dimen name="WH_300dp">300dp</dimen>
 
     <dimen name="spacing">4dp</dimen>
 </resources>

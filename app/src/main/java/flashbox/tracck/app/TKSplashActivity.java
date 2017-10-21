@@ -78,7 +78,6 @@ public class TKSplashActivity extends TKBaseActivity {
             } else {
                 intent = new Intent(TKSplashActivity.this, getNextActivity());
             }
-
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivityWithoutAnimation(intent);
 

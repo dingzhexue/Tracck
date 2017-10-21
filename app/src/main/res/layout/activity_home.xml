@@ -23,6 +23,7 @@
         android:paddingLeft="@dimen/padding_35dp"
         android:paddingRight="@dimen/padding_35dp"
         android:background="@color/colorBackground"
+        android:theme="@style/navigationdrawerstyle"
         app:menu="@menu/activity_home_drawer"
         app:itemTextAppearance="@android:style/TextAppearance.Large"
         app:itemTextColor="@color/menu_text_color"

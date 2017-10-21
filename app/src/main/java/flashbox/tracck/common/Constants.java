@@ -21,7 +21,7 @@ public class Constants {
      * Time Period Values
      */
     public static final String[] arrTimePeriods = new String[]{
-            "0-2 AM", "2-4 AM", "4-6 AM", "6-8 AM", "8-10 AM", "10-12 PM", "12-14 PM",
-            "14-16 PM", "16-18 PM", "18-20 PM", "20-22 PM", "22-0 AM"
+            "0 AM-2 AM", "2 AM-4 AM", "4 AM-6 AM", "6 AM-8 AM", "8 AM-10 AM", "10 AM-12 PM", "12 PM-14 PM",
+            "14 PM-16 PM", "16 PM-18 PM", "18 PM-20 PM", "20 PM-22 PM", "22 PM-0 AM"
     };
 }

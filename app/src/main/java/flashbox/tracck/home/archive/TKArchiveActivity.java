@@ -1,5 +1,7 @@
 package flashbox.tracck.home.archive;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
