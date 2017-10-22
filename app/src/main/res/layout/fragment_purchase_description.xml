@@ -27,6 +27,7 @@
                     android:layout_height="wrap_content"
                     android:text="14 Sep 2017"
                     android:textSize="@dimen/textsize_17sp"
+                    android:layout_marginLeft="@dimen/margin_10dp"
                     android:textColor="@android:color/black"
                     android:id="@+id/txtDate" />
 
@@ -58,6 +59,7 @@
                     android:textColor="@color/colorBlue"
                     android:textSize="@dimen/textsize_17sp"
                     android:layout_gravity="right"
+                    android:layout_marginRight="@dimen/margin_10dp"
                     android:id="@+id/txtEditTimePeriod" />
             </LinearLayout>
         </LinearLayout>

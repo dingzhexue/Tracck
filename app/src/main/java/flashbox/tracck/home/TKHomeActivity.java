@@ -300,7 +300,7 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
 
     @Override
     public boolean supportOffline() {
-        return false;
+        return true;
     }
 
     @Override

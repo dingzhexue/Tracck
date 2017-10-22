@@ -11,12 +11,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import flashbox.tracck.R;
 import flashbox.tracck.base.TKBaseActivity;
+import flashbox.tracck.common.Common;
+import flashbox.tracck.model.TKPurchase;
 
 public class TKPreviewActivity extends TKBaseActivity {
 
@@ -37,15 +41,17 @@ public class TKPreviewActivity extends TKBaseActivity {
     protected void initUI() {
         super.initUI();
 
-        //        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
-//        getSupportActionBar().hide();
-
-//        setFinishOnTouchOutside(false);
-
         init();
 
         addBottomDots(0);
+
+        TKPurchase temp = Common.getPurchase();
+
+        TextView txtproductName = (TextView) findViewById(R.id.product_name);
+        txtproductName.setText(temp.getStrProductName());
+
+        TextView txtShopName = (TextView) findViewById(R.id.shop_name);
+        txtShopName.setText(temp.getStrShopName());
 
         ImageView imgClose = (ImageView) findViewById(R.id.imgClose);
         imgClose.setOnClickListener(new View.OnClickListener() {

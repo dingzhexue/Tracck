@@ -41,7 +41,7 @@ public class TKMoreInfoFragment extends TKBaseFragment {
         fragmentProductDetails = new TKProductDetailsFragment();
 
         adapter = new TKMoreInfoViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(fragmentPurchaseDetails, "TKPurchase Details");
+        adapter.addFragment(fragmentPurchaseDetails, "Purchase Details");
         adapter.addFragment(fragmentProductDetails, "Product Details");
     }
 
