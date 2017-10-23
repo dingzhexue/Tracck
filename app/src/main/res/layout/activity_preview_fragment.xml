@@ -37,22 +37,32 @@
             android:text="@string/amazon"
             android:layout_gravity="center_horizontal"
             android:textColor="@android:color/holo_blue_light" />
-        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/WH_20dp">
+
+    </LinearLayout>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_slider"
-            android:layout_width="@dimen/WH_200dp"
-            android:layout_height="@dimen/WH_300dp"
-            android:layout_gravity="center_horizontal"/>
+        android:layout_width="@dimen/WH_200dp"
+        android:layout_height="@dimen/WH_0dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center_horizontal"/>
 
 
     <LinearLayout
         android:id="@+id/ll_dots"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/WH_50dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/margin_30dp"
         android:gravity="center"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="horizontal">
+
+    </LinearLayout>
 
 
 </LinearLayout>

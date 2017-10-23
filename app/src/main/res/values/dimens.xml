@@ -45,6 +45,7 @@
     <dimen name="smallsize">15dp</dimen>
 
     <dimen name="WH_5dp">5dp</dimen>
+    <dimen name="WH_10dp">10dp</dimen>
     <dimen name="WH_20dp">20dp</dimen>
     <dimen name="WH_23dp">23dp</dimen>
     <dimen name="WH_25dp">25dp</dimen>
