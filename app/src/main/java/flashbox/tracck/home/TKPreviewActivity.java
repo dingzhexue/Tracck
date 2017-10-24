@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -83,7 +84,7 @@ public class TKPreviewActivity extends TKBaseActivity {
 
     @Override
     public boolean supportOffline() {
-        return true;
+        return false;
     }
 
     private void init() {
@@ -99,6 +100,7 @@ public class TKPreviewActivity extends TKBaseActivity {
         slider_image_list.add(R.mipmap.ic_purchaseimg);
         slider_image_list.add(R.mipmap.ic_purchaseimgone);
         slider_image_list.add(R.mipmap.ic_purchaseimgtwo);
+
         sliderPagerAdapter = new TKSliderPagerAdapter(TKPreviewActivity.this, slider_image_list);
         vp_slider.setAdapter(sliderPagerAdapter);
         vp_slider.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

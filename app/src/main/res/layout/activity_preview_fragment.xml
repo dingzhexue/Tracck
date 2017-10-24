@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1.0">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/WH_40dp"
+        android:layout_height="@dimen/WH_0dp"
         android:padding="@dimen/padding_5dp"
-        android:gravity="center_vertical|right">
+        android:gravity="center_vertical|right"
+        android:layout_weight="0.1">
 
         <ImageView
             android:id="@+id/imgClose"
@@ -19,8 +21,9 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/WH_0dp"
         android:gravity="center_horizontal"
+        android:layout_weight="0.15"
         android:orientation="vertical">
 
         <TextView
@@ -41,25 +44,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/WH_20dp">
+        android:layout_height="@dimen/WH_0dp"
+        android:layout_weight="0.05">
 
     </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_slider"
-        android:layout_width="@dimen/WH_200dp"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/WH_0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.6"
         android:layout_gravity="center_horizontal"/>
 
 
     <LinearLayout
         android:id="@+id/ll_dots"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/margin_30dp"
+        android:layout_height="@dimen/WH_0dp"
         android:gravity="center"
+        android:layout_weight="0.1"
         android:orientation="horizontal">
 
     </LinearLayout>

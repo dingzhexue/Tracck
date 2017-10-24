@@ -15,7 +15,7 @@ public class CustomNumPicker extends NumberPicker {
     public void addView(View child) {
         super.addView(child);
         if(child instanceof EditText) {
-            ((EditText) child).setTextSize(3);
+            ((EditText) child).setTextSize(1);
         }
     }
 }

@@ -66,19 +66,19 @@ public class TKSplashActivity extends TKBaseActivity {
             }
 
             Intent intent = null;
-//            if (TKDatabase.getInstance().isSMSVerified()) {
-//                if (TKAmazonAccount.getInstance().isLoggedIn()) {
-//                    // Show home screen
-//                    intent = new Intent(TKSplashActivity.this, TKHomeActivity.class);
-//                } else {
-//                    // Show amazon login screen
-//                    // intent = new Intent(TKSplashActivity.this, TKAmazonLoginActivity.class);
-//                    intent = new Intent(TKSplashActivity.this, TKHomeActivity.class);
-//                }
-//            } else {
-//                intent = new Intent(TKSplashActivity.this, getNextActivity());
-//            }
-            intent = new Intent(TKSplashActivity.this, TKHomeActivity.class);
+            if (TKDatabase.getInstance().isSMSVerified()) {
+                if (TKAmazonAccount.getInstance().isLoggedIn()) {
+                    // Show home screen
+                    intent = new Intent(TKSplashActivity.this, TKHomeActivity.class);
+                } else {
+                    // Show amazon login screen
+                    // intent = new Intent(TKSplashActivity.this, TKAmazonLoginActivity.class);
+                    intent = new Intent(TKSplashActivity.this, TKHomeActivity.class);
+                }
+            } else {
+                intent = new Intent(TKSplashActivity.this, getNextActivity());
+            }
+//            intent = new Intent(TKSplashActivity.this, TKHomeActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivityWithoutAnimation(intent);
 

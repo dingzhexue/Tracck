@@ -106,7 +106,7 @@ public class TKArchiveActivity extends TKBaseActivity
 
     @Override
     public boolean supportOffline() {
-        return true;
+        return false;
     }
 
     @Override

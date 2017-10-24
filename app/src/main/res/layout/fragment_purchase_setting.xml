@@ -9,12 +9,13 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="@dimen/WH_0dp"
-        android:layout_weight="0.1">
+        android:layout_weight="0.1"
+        android:weightSum="1.0">
 
         <LinearLayout
             android:layout_width="@dimen/WH_0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.7"
+            android:layout_weight="0.73"
             android:orientation="horizontal"
             android:weightSum="1.0">
 
@@ -23,8 +24,8 @@
                 android:layout_width="@dimen/WH_0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:paddingLeft="@dimen/margin_15dp"
                 android:layout_weight="0.35"
+                android:textColor="@color/black"
                 android:text="@string/year" />
 
             <TextView
@@ -33,14 +34,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_weight="0.3"
+                android:textColor="@color/black"
                 android:text="@string/month" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="@dimen/WH_0dp"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/padding_15dp"
+                android:gravity="center_horizontal"
                 android:layout_weight="0.35"
+                android:textColor="@color/black"
                 android:text="@string/day" />
 
         </LinearLayout>
@@ -50,13 +53,14 @@
             android:layout_width="@dimen/WH_0dp"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:layout_weight="0.3">
+            android:layout_weight="0.27">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/time"
-                android:id="@+id/textView8" />
+                android:id="@+id/textView8"
+                android:textColor="@color/black"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -79,28 +83,33 @@
                 android:layout_width="@dimen/WH_0dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:layout_weight="0.7">
+                android:paddingLeft="@dimen/padding_2dp"
+                android:paddingRight="@dimen/padding_2dp"
+                android:layout_weight="0.73">
 
                 <DatePicker
                     android:id="@+id/pickerDate"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Date Picker"
+                    android:theme="@style/NumberPickerText"
                     android:datePickerMode="spinner"
-                    android:calendarViewShown="false"
-                    android:scaleX="0.85"/>
+                    android:background="@android:color/transparent"
+                    android:calendarViewShown="false" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="@dimen/WH_0dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical|center_horizontal"
-                android:layout_weight="0.3">
+                android:layout_weight="0.27">
 
                 <flashbox.tracck.common.CustomNumPicker
                     android:id="@+id/pickerTimePeriod"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:background="@android:color/transparent"
                     android:layout_height="wrap_content"
+                    android:theme="@style/NumberPickerText"
                     android:layout_centerHorizontal="true"/>
             </LinearLayout>
 
@@ -122,6 +131,7 @@
                 android:layout_weight="0.5"
                 android:textAllCaps="false"
                 android:background="@color/colorGreen"
+                android:textColor="@color/white"
                 android:text="@string/retur"/>
 
             <Button
@@ -130,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:textAllCaps="false"
-                android:background="@color/darker_gray"
+                android:background="@color/colorGray"
                 android:text="@string/exchange"/>
 
         </LinearLayout>

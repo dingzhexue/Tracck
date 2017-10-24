@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -21,7 +22,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -149,7 +152,15 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
     private void showReturnExchange(final Context context) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        dialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         dialog.setContentView(R.layout.fragment_return_exchange);
+
+        Window window = dialog.getWindow();
+        WindowManager.LayoutParams wlp = window.getAttributes();
+
+        wlp.gravity = Gravity.TOP;
+        window.setAttributes(wlp);
+
         dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(true);
 
@@ -191,7 +202,7 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
                 break;
         }
 
-        NumberPicker picker = (NumberPicker) fragmentBody.findViewById(R.id.pickerTimePeriod);;
+        final NumberPicker picker = (NumberPicker) fragmentBody.findViewById(R.id.pickerTimePeriod);;
         picker.setMinValue(0);
         picker.setMaxValue(Constants.arrTimePeriods.length - 1);
         picker.setWrapSelectorWheel(false);
@@ -202,14 +213,42 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
                 Common.setSelectedTimePeriod(Constants.arrTimePeriods[newVal]);
             }
         });
+        picker.post(new Runnable() {
+            @Override
+            public void run() {
+                DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+
+                float realPickerWidth = (float)(picker.getMeasuredWidth() * displayMetrics.scaledDensity);
+                float pickerWidth = (float) (displayMetrics.widthPixels * 0.27);
+
+                float scaleX = pickerWidth/realPickerWidth;
+                picker.setScaleX(scaleX);
+            }
+        });
+
+        final DatePicker pickerDate = (DatePicker) fragmentBody.findViewById(R.id.pickerDate);
+        pickerDate.post(new Runnable() {
+            @Override
+            public void run() {
+                DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+
+                float realPickerWidth = (float)(pickerDate.getMeasuredWidth() * displayMetrics.scaledDensity);
+                float pickerWidth = (float) (displayMetrics.widthPixels * 0.75);
+
+                float scaleX = pickerWidth/realPickerWidth;
+                pickerDate.setScaleX(scaleX);
+            }
+        });
 
         final Button btnExchange = (Button) fragmentBody.findViewById(R.id.btn_exchange);
         final Button btnReturn = (Button) fragmentBody.findViewById(R.id.btn_return);
         btnExchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnReturn.setBackgroundResource(R.color.darker_gray);
+                btnReturn.setBackgroundResource(R.color.colorGray);
                 btnExchange.setBackgroundResource(R.color.colorGreen);
+                btnExchange.setTextColor(Color.WHITE);
+                btnReturn.setTextColor(Color.BLACK);
             }
         });
 
@@ -217,7 +256,9 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
             @Override
             public void onClick(View view) {
                 btnReturn.setBackgroundResource(R.color.colorGreen);
-                btnExchange.setBackgroundResource(R.color.darker_gray);
+                btnExchange.setBackgroundResource(R.color.colorGray);
+                btnReturn.setTextColor(Color.WHITE);
+                btnExchange.setTextColor(Color.BLACK);
             }
         });
 
@@ -250,6 +291,13 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
                     public void onClick(View v) {
                         fragmentBody.removeAllViews();
                         View.inflate(getContext(), R.layout.fragment_purchase_submit, fragmentBody);
+
+                        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+                        int dialogWidth = (int)(displayMetrics.widthPixels * 1);
+                        int dialogHeight = (int)(displayMetrics.heightPixels * 0.75);
+                        dialog.getWindow().setLayout(dialogWidth, dialogHeight);
+
+                        dialog.show();
 
                         Spanned sp = new SpannableStringBuilder("Packaging was broken");
                         TKChat chat = new TKChat();

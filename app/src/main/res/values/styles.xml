@@ -71,11 +71,6 @@
         <!-- Applied to framework control highlights (i.e ripples or list selectors) -->
         <item name="colorControlHighlight">@color/colorGreen</item>
 
-        <!-- Enable these below if you want clicking icons to trigger a ripple effect -->
-        <!--
-        <item name="selectableItemBackground">?android:selectableItemBackground</item>
-        <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>
-        -->
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -84,5 +79,9 @@
     </style>
     <style name="navigationdrawerstyle">
         <item name="android:listPreferredItemHeightSmall">60dp</item>
+    </style>
+
+    <style name="NumberPickerText">
+        <item name="android:textSize">@dimen/font_medium1</item>
     </style>
 </resources>

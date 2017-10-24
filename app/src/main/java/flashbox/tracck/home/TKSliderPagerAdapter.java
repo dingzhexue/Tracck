@@ -30,7 +30,7 @@ public class TKSliderPagerAdapter extends PagerAdapter {
         assert imagelayout !=null;
         ImageView im_slider = imagelayout.findViewById(R.id.im_slider);
         im_slider.setImageResource(image_arraylist.get(position));
-
+        im_slider.setAdjustViewBounds(true);
         container.addView(imagelayout);
 
         return imagelayout;
