@@ -9,7 +9,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
@@ -17,7 +16,6 @@ import android.text.Spanned;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +30,6 @@ import android.widget.NumberPicker;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.gpit.android.ui.common.BaseFragment;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -43,6 +40,7 @@ import flashbox.tracck.base.TKBaseFragment;
 import flashbox.tracck.common.Common;
 import flashbox.tracck.common.Constants;
 import flashbox.tracck.model.TKChat;
+import flashbox.tracck.model.TKPurchase;
 
 public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticonsGridAdapter.KeyClickListener {
     private static final int NO_OF_EMOTICONS = 54;
@@ -163,6 +161,35 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
                 dialog.dismiss();
             }
         });
+
+        TKPurchase temp  = Common.getPurchase();
+
+        TextView txtProductName = (TextView) dialog.findViewById(R.id.txt_productname);
+        txtProductName.setText(temp.getStrProductName());
+
+        TextView txtShopName = (TextView) dialog.findViewById(R.id.txt_showname);
+        txtShopName.setText(temp.getStrShopName());
+
+        TextView txtPeriod = (TextView) dialog.findViewById(R.id.txt_period);
+        txtPeriod.setText(temp.getStrPeriod());
+
+        Button btnStatus = (Button) dialog.findViewById(R.id.btn_status);
+        btnStatus.setText(temp.getStrStatus());
+
+        switch (temp.getStrStatus()) {
+            case "En route":
+                btnStatus.setBackgroundResource(R.drawable.roundyellow);
+                break;
+            case "Delivered":
+                btnStatus.setBackgroundResource(R.drawable.roundgreen);
+                break;
+            case "Service":
+                btnStatus.setBackgroundResource(R.drawable.roundred);
+                break;
+            case "Packing":
+                btnStatus.setBackgroundResource(R.drawable.roundpurple);
+                break;
+        }
 
         NumberPicker picker = (NumberPicker) fragmentBody.findViewById(R.id.pickerTimePeriod);;
         picker.setMinValue(0);

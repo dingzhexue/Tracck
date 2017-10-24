@@ -27,6 +27,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/productInfo"
             android:layout_width="match_parent"
             android:layout_height="@dimen/WH_0dp"
             android:orientation="horizontal"
@@ -37,10 +38,11 @@
                 android:layout_width="@dimen/WH_0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="0.6">
+                android:paddingLeft="@dimen/padding_10dp"
+                android:layout_weight="0.55">
                 <TextView
                     android:id="@+id/txt_productname"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -58,7 +60,8 @@
                 android:layout_width="@dimen/WH_0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="0.4"
+                android:paddingRight="@dimen/padding_15dp"
+                android:layout_weight="0.45"
                 android:gravity="right">
                 <TextView
                     android:id="@+id/txt_period"
