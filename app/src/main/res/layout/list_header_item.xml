@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="@dimen/paddding_1dp"
+    android:padding="@dimen/padding_1dp"
     android:focusable="false"
     android:focusableInTouchMode="false">
 
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_15dp"
-            android:padding="@dimen/paddding_1dp"
+            android:padding="@dimen/padding_1dp"
             android:text="@string/str_today"
             android:textColor="@android:color/darker_gray"/>
     </LinearLayout>

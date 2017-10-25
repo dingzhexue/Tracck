@@ -82,6 +82,6 @@
     </style>
 
     <style name="NumberPickerText">
-        <item name="android:textSize">@dimen/font_medium1</item>
+        <item name="android:textSize">@dimen/font_medium</item>
     </style>
 </resources>

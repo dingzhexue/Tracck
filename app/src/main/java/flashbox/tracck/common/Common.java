@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import flashbox.tracck.R;
@@ -15,6 +18,8 @@ import flashbox.tracck.model.TKPurchase;
 
 public class Common {
     private static String strSelectedTimePeriod;
+
+    private static String strSelectedDate;
 
     private static ArrayList<TKPurchase> archived;
 
@@ -26,6 +31,24 @@ public class Common {
 
     public static void setSelectedTimePeriod(String strSelectedTimePeriod) {
         Common.strSelectedTimePeriod = strSelectedTimePeriod;
+    }
+
+    public static String getSelectedDate() {
+        return strSelectedDate;
+    }
+
+    public static void setSelectedDate(String strSelectedDate) {
+        Common.strSelectedDate = strSelectedDate;
+    }
+
+    public static String formatDate(int year, int month, int day) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(0);
+        cal.set(year, month, day);
+        Date date = cal.getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+
+        return sdf.format(date);
     }
 
     public static void setPurchase(TKPurchase purchase) {

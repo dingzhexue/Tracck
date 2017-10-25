@@ -21,7 +21,7 @@
     <dimen name="margin_60dp">60dp</dimen>
     <dimen name="WH_0dp">0dp</dimen>
 
-    <dimen name="paddding_1dp">1dp</dimen>
+    <dimen name="padding_1dp">1dp</dimen>
     <dimen name="padding_2dp">2dp</dimen>
     <dimen name="padding_5dp">5dp</dimen>
     <dimen name="padding_8dp">8dp</dimen>

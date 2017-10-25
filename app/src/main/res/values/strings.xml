@@ -94,11 +94,11 @@
     <string name="cell_item_str_status1">En route</string>
     <string name="cell_item_str_status2">Delivered</string>
     <string name="cell_item_str_warning">1</string>
-    <string name="detail">You Return Request is accepted, we will initiate the pick up and notify you soon.</string>
-    <string name="year">Year</string>
-    <string name="month">Month</string>
-    <string name="day">Day</string>
-    <string name="time">Time</string>
+    <string name="detail">Your Return request is accepted, we will initiate the pick up and notify you soon.</string>
+    <string name="year">YEAR</string>
+    <string name="month">MONTH</string>
+    <string name="day">DAY</string>
+    <string name="time">TIME</string>
     <string name="retur">Return</string>
     <string name="exchange">Exchange</string>
     <string name="next">Next</string>

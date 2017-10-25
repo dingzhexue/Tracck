@@ -3,12 +3,15 @@ package flashbox.tracck.home.chat;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
@@ -36,6 +39,9 @@ import android.widget.TextView;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.StringTokenizer;
 
 import flashbox.tracck.R;
@@ -149,6 +155,21 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
 
     }
 
+    @SuppressWarnings("deprecation")
+    private void setLocale(Locale locale){
+        Resources resources = getResources();
+        Configuration configuration = resources.getConfiguration();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+            configuration.setLocale(locale);
+            getActivity().getApplicationContext().createConfigurationContext(configuration);
+        }
+        else{
+            configuration.locale=locale;
+            resources.updateConfiguration(configuration,displayMetrics);
+        }
+    }
+
     private void showReturnExchange(final Context context) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -213,32 +234,32 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
                 Common.setSelectedTimePeriod(Constants.arrTimePeriods[newVal]);
             }
         });
-        picker.post(new Runnable() {
-            @Override
-            public void run() {
-                DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-
-                float realPickerWidth = (float)(picker.getMeasuredWidth() * displayMetrics.scaledDensity);
-                float pickerWidth = (float) (displayMetrics.widthPixels * 0.27);
-
-                float scaleX = pickerWidth/realPickerWidth;
-                picker.setScaleX(scaleX);
-            }
-        });
+//        picker.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+//
+//                float realPickerWidth = (float)(picker.getMeasuredWidth() * displayMetrics.scaledDensity);
+//                float pickerWidth = (float) (displayMetrics.widthPixels * 0.27);
+//
+//                float scaleX = pickerWidth/realPickerWidth;
+//                picker.setScaleX(scaleX);
+//            }
+//        });
 
         final DatePicker pickerDate = (DatePicker) fragmentBody.findViewById(R.id.pickerDate);
-        pickerDate.post(new Runnable() {
-            @Override
-            public void run() {
-                DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-
-                float realPickerWidth = (float)(pickerDate.getMeasuredWidth() * displayMetrics.scaledDensity);
-                float pickerWidth = (float) (displayMetrics.widthPixels * 0.75);
-
-                float scaleX = pickerWidth/realPickerWidth;
-                pickerDate.setScaleX(scaleX);
-            }
-        });
+//        pickerDate.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+//
+//                float realPickerWidth = (float)(pickerDate.getMeasuredWidth() * displayMetrics.scaledDensity);
+//                float pickerWidth = (float) (displayMetrics.widthPixels * 0.75);
+//
+//                float scaleX = pickerWidth/realPickerWidth;
+//                pickerDate.setScaleX(scaleX);
+//            }
+//        });
 
         final Button btnExchange = (Button) fragmentBody.findViewById(R.id.btn_exchange);
         final Button btnReturn = (Button) fragmentBody.findViewById(R.id.btn_return);
@@ -270,6 +291,10 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
 
                 View.inflate(getContext(), R.layout.fragment_purchase_description, fragmentBody);
 
+                TextView txtDate = (TextView) fragmentBody.findViewById(R.id.txtDate);
+                String strDate = Common.formatDate(pickerDate.getYear(), pickerDate.getMonth(), pickerDate.getDayOfMonth());
+                txtDate.setText(strDate);
+
                 TextView txtTimePeriod = (TextView) fragmentBody.findViewById(R.id.txtTimePeriod);
                 String strTimePeriod = Common.getSelectedTimePeriod();
                 if (strTimePeriod == null || strTimePeriod.equals(""))
@@ -289,15 +314,52 @@ public class TKPurchaseChatFragment extends TKBaseFragment implements TKEmoticon
                 btnSubmit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        fragmentBody.removeAllViews();
-                        View.inflate(getContext(), R.layout.fragment_purchase_submit, fragmentBody);
+                        final Window window = dialog.getWindow();
+                        window.setContentView(R.layout.fragment_purchase_submit);
+                        final LinearLayout dialogContainer = (LinearLayout) window.findViewById(R.id.submit);
+                        dialogContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                            @Override
+                            public void onGlobalLayout() {
+                                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                                dialogContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                            }
+                        });
 
-                        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-                        int dialogWidth = (int)(displayMetrics.widthPixels * 1);
-                        int dialogHeight = (int)(displayMetrics.heightPixels * 0.75);
-                        dialog.getWindow().setLayout(dialogWidth, dialogHeight);
+                        TKPurchase temp = Common.getPurchase();
+                        TextView txtProductName = (TextView) dialog.findViewById(R.id.txt_productname);
+                        txtProductName.setText(temp.getStrProductName());
 
-                        dialog.show();
+                        TextView txtShopName = (TextView) dialog.findViewById(R.id.txt_showname);
+                        txtShopName.setText(temp.getStrShopName());
+
+                        TextView txtPeriod = (TextView) dialog.findViewById(R.id.txt_period);
+                        txtPeriod.setText(temp.getStrPeriod());
+
+                        Button btnStatus = (Button) dialog.findViewById(R.id.btn_status);
+                        btnStatus.setText(temp.getStrStatus());
+
+                        switch (temp.getStrStatus()) {
+                            case "En route":
+                                btnStatus.setBackgroundResource(R.drawable.roundyellow);
+                                break;
+                            case "Delivered":
+                                btnStatus.setBackgroundResource(R.drawable.roundgreen);
+                                break;
+                            case "Service":
+                                btnStatus.setBackgroundResource(R.drawable.roundred);
+                                break;
+                            case "Packing":
+                                btnStatus.setBackgroundResource(R.drawable.roundpurple);
+                                break;
+                        }
+
+                        ImageView imgClose = (ImageView) dialog.findViewById(R.id.imgCloseSub);
+                        imgClose.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
 
                         Spanned sp = new SpannableStringBuilder("Packaging was broken");
                         TKChat chat = new TKChat();
