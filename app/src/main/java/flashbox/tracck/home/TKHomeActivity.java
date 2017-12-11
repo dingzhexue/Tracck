@@ -37,6 +37,7 @@ import flashbox.tracck.R;
 import flashbox.tracck.base.TKBaseActivity;
 import flashbox.tracck.common.Common;
 import flashbox.tracck.common.Constants;
+import flashbox.tracck.common.api.TKHomeAPI;
 import flashbox.tracck.connect.amazon.ui.TKAmazonLoginActivity;
 import flashbox.tracck.home.archive.TKArchiveActivity;
 import flashbox.tracck.home.details.TKPurchaseDetailActivity;
@@ -58,6 +59,7 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -300,8 +302,8 @@ public class TKHomeActivity extends TKBaseActivity implements NavigationView.OnN
 
     @Override
     public boolean supportOffline() {
-        return false;
-    }
+        return true;
+    } //kkc
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

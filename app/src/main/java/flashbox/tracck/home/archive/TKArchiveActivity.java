@@ -106,8 +106,8 @@ public class TKArchiveActivity extends TKBaseActivity
 
     @Override
     public boolean supportOffline() {
-        return false;
-    }
+        return true;
+    } //kkc
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
